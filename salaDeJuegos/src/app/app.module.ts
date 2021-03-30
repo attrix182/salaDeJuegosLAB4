@@ -57,7 +57,7 @@ import { environment } from 'src/environments/environment';
     MatOptionModule,
     MatSelectModule,
     MatGridListModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
