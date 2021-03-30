@@ -1,25 +1,26 @@
 <mat-toolbar class="navColor">
-  <button mat-raised-button  routerLink="../registro" class="nav-link">REGISTRARSE</button>
+
+  <button mat-raised-button color="primary" routerLink="../login" class="nav-link">Iniciar Sesion</button>
+
 
 </mat-toolbar>
 
 
 <div class="bgimg">
   <div class="testclass">
-    <button mat-button (click)="help()">
-      <mat-icon class="help">help_outline</mat-icon>
-    </button>
 
+    <br>
 
     <br>
     <div align=center>
 
 
       <mat-card class="example-card">
-        <h1>SALA DE JUEGOS</h1>
+  
 
-        <img src="../assets/favicon.png" height="150">
+        <h1>REGISTRO</h1>
 
+   
 
         <p>
           <mat-form-field appearance="legacy">
@@ -29,7 +30,7 @@
             <mat-hint>Correo</mat-hint>
           </mat-form-field>
         </p>
-
+  
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su contraseña</mat-label>
@@ -38,9 +39,12 @@
             <mat-hint>Contraseña</mat-hint>
           </mat-form-field>
         </p>
+  
+  
+        <button mat-raised-button class="loginColor">Registrarse</button>
+  
+  
 
-
-        <button mat-raised-button class="loginColor">Login</button>
 
 
 
