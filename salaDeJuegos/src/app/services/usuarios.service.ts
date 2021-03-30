@@ -1,14 +1,30 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore/';
+
+import { Usuario } from '../clases/usuario';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class MensajeFireService {
 
-public usuarioVigente:string;
+  rutaDeLaColeccion = '/usuarios';
+  referenciaAlaColeccion: AngularFirestoreCollection<Usuario>;
 
-  constructor() {
+  constructor(private bd: AngularFirestore) {
+    this.referenciaAlaColeccion = bd.collection(this.rutaDeLaColeccion);
 
-    this.usuarioVigente = 'alguien';
-   }
+  }
+
+
+  Crear(mensaje:Usuario):any
+  {
+    return this.referenciaAlaColeccion.add({...mensaje});
+  }
+
+
+
+
+
 }

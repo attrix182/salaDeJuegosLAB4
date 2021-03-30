@@ -4,9 +4,11 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
+
+  firebase: {
     apiKey: "AIzaSyAdLRPswxk-NHQMaozMMlgAI_YjkdWSRkE",
     authDomain: "tpsaladejuegosutn.firebaseapp.com",
+    databaseURL: "https://tpsaladejuegosutn-default-rtdb.firebaseio.com",
     projectId: "tpsaladejuegosutn",
     storageBucket: "tpsaladejuegosutn.appspot.com",
     messagingSenderId: "544710299304",
