@@ -24,7 +24,7 @@
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
-            <input matInput placeholder="Correo">
+            <input matInput placeholder="Correo"  [(ngModel)]="unUsuario.correo">
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Correo</mat-hint>
           </mat-form-field>
@@ -33,14 +33,14 @@
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su contraseña</mat-label>
-            <input matInput placeholder="Contraseña">
+            <input matInput placeholder="Contraseña" type="password" [(ngModel)]="unUsuario.clave">
             <mat-icon matSuffix>lock</mat-icon>
             <mat-hint>Contraseña</mat-hint>
           </mat-form-field>
         </p>
 
 
-        <button mat-raised-button class="loginColor">Login</button>
+        <button mat-raised-button class="loginColor" (click)="Login()" >Login</button>
 
 
 

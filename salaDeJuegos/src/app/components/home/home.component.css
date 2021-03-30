@@ -1,0 +1,28 @@
+.example-card {
+
+    max-width: 600px;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .bgimg {
+    display:block;
+    width:100%;
+    height:100%;
+    background: url('../../../assets/background.gif')  center center fixed;
+  }
+
+  .navColor {
+
+    background-color: white;
+
+  }
+
+  .nav-link{
+
+
+    background-color: black;
+    color: white;
+  }

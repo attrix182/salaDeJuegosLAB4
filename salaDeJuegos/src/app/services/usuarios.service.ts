@@ -21,9 +21,13 @@ export class UsuarioFireService {
   Crear(usuario:Usuario):any
   {
     return this.referenciaAlaColeccion.add({...usuario});
+
   }
 
-  
+  public TraerTodos()
+  {
+     return this.referenciaAlaColeccion;
+  }
 
 
 
