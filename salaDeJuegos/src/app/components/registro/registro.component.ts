@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioFireService } from './../../services/usuarios.service';
 import { Usuario } from '../../clases/usuario'
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registro',
@@ -14,6 +16,20 @@ export class RegistroComponent implements OnInit {
   
   constructor(private MiServicio: UsuarioFireService, private router:Router) { this.unUsuario = new Usuario();}
 
+
+
+  correo = new FormControl('', [Validators.required, Validators.email]);
+  clave = new FormControl('', [Validators.required, Validators.required]);
+
+  getErrorMessage() {
+    if (this.correo.hasError('required')) {
+      return 'Debes ingresar un valor';
+    }
+
+    return this.correo.hasError('email') ? 'No es un correo valido' : '';
+
+  }
+
   Enviar() {
 
 
@@ -25,6 +41,10 @@ export class RegistroComponent implements OnInit {
     });
 
   }
+
+
+
+  
 
   
 

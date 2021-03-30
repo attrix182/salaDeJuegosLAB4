@@ -26,8 +26,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { RegistroComponent } from './components/registro/registro.component';
 import {AngularFireModule} from '@angular/fire';
 
+
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

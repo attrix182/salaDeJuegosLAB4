@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/clases/usuario';
 import {UsuarioFireService} from 'src/app/services/usuarios.service';
+import {FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -20,6 +21,17 @@ export class LoginComponent implements OnInit {
   help(){
 
     this.dialog.open(DialogElementsExampleDialog);
+  }
+
+  correo = new FormControl('', [Validators.required, Validators.email]);
+  clave = new FormControl('', [Validators.required, Validators.required]);
+
+  getErrorMessage() {
+    if (this.correo.hasError('required')) {
+      return 'Debes ingresar un valor';
+    }
+
+    return this.correo.hasError('email') ? 'No es un correo valido' : '';
   }
 
 
