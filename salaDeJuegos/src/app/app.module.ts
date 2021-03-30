@@ -27,6 +27,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import {AngularFireModule} from '@angular/fire';
 
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { environment } from 'src/environments/environment';
     MatOptionModule,
     MatSelectModule,
     MatGridListModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

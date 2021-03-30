@@ -7,7 +7,7 @@ import { Usuario } from '../clases/usuario';
 @Injectable({
   providedIn: 'root'
 })
-export class MensajeFireService {
+export class UsuarioFireService {
 
   rutaDeLaColeccion = '/usuarios';
   referenciaAlaColeccion: AngularFirestoreCollection<Usuario>;
@@ -18,10 +18,13 @@ export class MensajeFireService {
   }
 
 
-  Crear(mensaje:Usuario):any
+  Crear(usuario:Usuario):any
   {
-    return this.referenciaAlaColeccion.add({...mensaje});
+    return this.referenciaAlaColeccion.add({...usuario});
   }
+
+  
+
 
 
 
