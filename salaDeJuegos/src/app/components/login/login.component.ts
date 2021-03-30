@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       return 'Debes ingresar un valor';
     }
 
-    return this.correo.hasError('email') ? 'No es un correo valido' : '';
+    return this.correo.hasError('email') ? 'No es un correo valido.' : '';
   }
 
 
