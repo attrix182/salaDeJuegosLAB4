@@ -29,6 +29,11 @@ export class UsuarioFireService {
      return this.referenciaAlaColeccion;
   }
 
+  public Existe()
+  {
+     return this.referenciaAlaColeccion;
+  }
+
 
 
 
