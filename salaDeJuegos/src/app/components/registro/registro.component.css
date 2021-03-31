@@ -9,7 +9,7 @@ html, body {
     background: url('../../../assets/background.gif')  center center fixed;
   }
 
-  .example-card {
+  .animate__backInLeft {
     max-width: 400px;
     background-color: white;
 

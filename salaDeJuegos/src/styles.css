@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~animate.css/animate.min';
+
+@font-face {
+    font-family: gameplay;
+    src: url(assets/fonts/gameplay/Gameplay.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: game;
+    src: url(assets/fonts/games/Games.ttf) format("opentype");
+  }
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

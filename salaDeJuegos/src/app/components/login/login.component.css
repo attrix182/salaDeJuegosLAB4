@@ -9,11 +9,21 @@ html, body {
     background: url('../../../assets/background.gif')  center center fixed;
   }
 
-  .example-card {
+  .animate__backInLeft {
     max-width: 400px;
     background-color: white;
 
     
+  }
+
+
+  .tituloLogin{
+
+    margin: 0;
+    padding: 0;
+    font-family:game;
+    font-size: xx-large;
+
   }
 
   .navColor {

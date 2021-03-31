@@ -1,3 +1,5 @@
+
+
 <mat-toolbar class="navColor">
   <button mat-raised-button routerLink="../registro" class="nav-link">REGISTRARSE</button>
 
@@ -12,15 +14,16 @@
 
 
     <br>
+ 
     <div align=center>
 
 
-      <mat-card class="example-card">
-        <h1>SALA DE JUEGOS</h1>
+      <mat-card class="example-card" class="animate__animated animate__backInLeft"> 
 
-        <img src="../assets/favicon.png" height="150">
-
-
+        <h1 class="tituloLogin">SALA DE JUEGOS</h1>
+      
+     <marquee behavior="" direction="right"><img src="../assets/favicon.png" height="150" > 
+     </marquee>       
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
@@ -48,7 +51,7 @@
 
       </mat-card>
 
-
+  
 
       <router-outlet></router-outlet>
 
