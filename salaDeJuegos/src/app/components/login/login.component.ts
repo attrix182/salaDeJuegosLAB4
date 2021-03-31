@@ -81,12 +81,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-  public Esta(){
-
-    return this.servicioUsuario.Existe(this.unUsuario)
-
-  }
-
 
 
   ngOnInit(): void {

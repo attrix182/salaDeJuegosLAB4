@@ -32,7 +32,7 @@ export class UsuarioFireService {
 
   public Existe(user:Usuario)
   {
-    return this.referenciaAlaColeccion.doc(user.correo).get;
+   // return this.referenciaAlaColeccion.doc(user.correo).get;
      
   }
 
