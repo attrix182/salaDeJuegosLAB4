@@ -39,7 +39,7 @@ export class RegistroComponent implements OnInit {
 
   }
 
-  Enviar() {
+  Registro() {
 
     if (!(this.clave.value == '' && this.correo.value == '')) //revisar
     {
