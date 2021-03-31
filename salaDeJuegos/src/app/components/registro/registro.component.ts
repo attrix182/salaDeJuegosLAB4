@@ -21,12 +21,21 @@ export class RegistroComponent implements OnInit {
   correo = new FormControl('', [Validators.required, Validators.email]);
   clave = new FormControl('', [Validators.required, Validators.required]);
 
-  getErrorMessage() {
+  getErrorMessageCorreo() {
     if (this.correo.hasError('required')) {
       return 'Debes ingresar un valor';
     }
 
     return this.correo.hasError('email') ? 'No es un correo valido' : '';
+
+  }
+
+  getErrorMessageClave() {
+    if (this.clave.hasError('required')) {
+      return 'Debes ingresar un valor';
+    }
+
+    return this.clave.hasError('') ? 'Debes ingresar un valor' : '';
 
   }
 

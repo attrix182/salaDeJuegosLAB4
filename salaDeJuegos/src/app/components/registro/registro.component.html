@@ -18,7 +18,7 @@
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
             <input matInput placeholder="Correo"   [(ngModel)]="unUsuario.correo" [formControl]="correo" required>
-            <mat-error *ngIf="correo.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-error *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</mat-error>
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Correo</mat-hint>
           </mat-form-field>
@@ -31,7 +31,7 @@
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su contraseña</mat-label>
             <input matInput placeholder="Contraseña" type="password"  [(ngModel)]="unUsuario.clave" required>
-            <mat-error *ngIf="clave.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-error *ngIf="clave.invalid">{{getErrorMessageClave()}}</mat-error>
             <mat-icon matSuffix>lock</mat-icon>
             <mat-hint>Contraseña</mat-hint>
           </mat-form-field>

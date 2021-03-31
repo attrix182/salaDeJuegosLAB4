@@ -12,9 +12,10 @@ export class UsuarioFireService {
   rutaDeLaColeccion = '/usuarios';
   referenciaAlaColeccion: AngularFirestoreCollection<Usuario>;
 
+
   constructor(private bd: AngularFirestore) {
     this.referenciaAlaColeccion = bd.collection(this.rutaDeLaColeccion);
-
+    
   }
 
 
@@ -29,9 +30,10 @@ export class UsuarioFireService {
      return this.referenciaAlaColeccion;
   }
 
-  public Existe()
+  public Existe(user:Usuario)
   {
-     return this.referenciaAlaColeccion;
+    return this.referenciaAlaColeccion.doc(user.correo).get;
+     
   }
 
 
