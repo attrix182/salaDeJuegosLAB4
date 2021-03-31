@@ -14,14 +14,22 @@ import {FormControl, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public unUsuario:Usuario;
+  public loged : Boolean
 
-  constructor(public dialog: MatDialog, private servicioUsuario:UsuarioFireService,private router:Router) { this.unUsuario = new Usuario(); }
+
+
+
+  constructor(public dialog: MatDialog, private servicioUsuario:UsuarioFireService,private router:Router) { this.unUsuario = new Usuario();        this.loged = false; }
+
 
 
   help(){
 
     this.dialog.open(DialogElementsExampleDialog);
   }
+
+  
+
 
   correo = new FormControl('', [Validators.required, Validators.email]);
   clave = new FormControl('', [Validators.required, Validators.required]);
@@ -34,9 +42,9 @@ export class LoginComponent implements OnInit {
     return this.correo.hasError('email') ? 'No es un correo valido.' : '';
   }
 
-
   public Login()
   {
+    
     let listaUsuarios=this.servicioUsuario.TraerTodos().valueChanges();
  
      listaUsuarios.forEach(i => {
@@ -45,11 +53,17 @@ export class LoginComponent implements OnInit {
           if((this.unUsuario.correo.toString()== j.correo.toString()) && (this.unUsuario.clave.toString() ==j.clave.toString()))
           {
             console.log('hola')
-  
+            this.loged = true;
             this.router.navigateByUrl("home");
           }
+          this.loged = true;
         });
+     
      });
+     if(this.loged == false){
+      this.dialog.open(DialogInvalid);}
+
+ 
   
   }
 
@@ -60,8 +74,15 @@ export class LoginComponent implements OnInit {
 
 }
 
+
 @Component({
   selector: 'dialog-elements-example-dialog',
   templateUrl: 'dialog-elements-example-dialog.html',
 })
 export class DialogElementsExampleDialog {}
+
+@Component({
+  selector: 'dialog-invalid',
+  templateUrl: 'dialog-invalid.html',
+})
+export class DialogInvalid{}
