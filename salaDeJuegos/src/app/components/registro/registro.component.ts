@@ -13,8 +13,8 @@ import { FormControl, Validators } from '@angular/forms';
 export class RegistroComponent implements OnInit {
 
   unUsuario: Usuario;
-  
-  constructor(private MiServicio: UsuarioFireService, private router:Router) { this.unUsuario = new Usuario();}
+
+  constructor(private MiServicio: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); }
 
 
 
@@ -41,21 +41,24 @@ export class RegistroComponent implements OnInit {
 
   Enviar() {
 
+    if (!(this.clave.value == '' && this.correo.value == '')) //revisar
+    {
+      this.MiServicio.Crear(this.unUsuario).then(() => {
 
-    this.MiServicio.Crear(this.unUsuario).then(() => {
+        console.log('se envio el Usuario');
+        this.router.navigateByUrl("home");
 
-      console.log('se envio el Usuario');
-      this.router.navigateByUrl("home");
+      });
 
-    });
+    } else { console.log('Campos vacios')}
 
   }
 
 
 
-  
 
-  
+
+
 
 
   ngOnInit(): void {
