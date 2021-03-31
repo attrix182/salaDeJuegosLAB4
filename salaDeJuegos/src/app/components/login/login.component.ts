@@ -60,8 +60,7 @@ export class LoginComponent implements OnInit {
         });
      
      });
-     if(this.loged == false){
-      this.dialog.open(DialogInvalid);}
+
 
  
   
@@ -81,8 +80,3 @@ export class LoginComponent implements OnInit {
 })
 export class DialogElementsExampleDialog {}
 
-@Component({
-  selector: 'dialog-invalid',
-  templateUrl: 'dialog-invalid.html',
-})
-export class DialogInvalid{}
