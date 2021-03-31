@@ -64,12 +64,13 @@ export class LoginComponent implements OnInit {
 
         if ((this.unUsuario.correo.toString() == j.correo.toString()) && (this.unUsuario.clave.toString() == j.clave.toString())) {
      
-      
+          
           this.router.navigateByUrl("home");
           this.loged = true;
         }
       //  this.loged = true;
       });
+      
      
     });
 

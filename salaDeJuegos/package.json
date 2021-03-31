@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "animate.css": "^4.1.1",
     "express": "^4.17.1",
     "firebase": "^8.3.1",
     "path": "^0.12.7",
