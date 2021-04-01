@@ -25,11 +25,9 @@ export class LoginComponent implements OnInit {
 
 
   help() {
-
     this.dialog.open(DialogElementsExampleDialog);
+
   }
-
-
 
 
   correo = new FormControl('', [Validators.required, Validators.email]);

@@ -16,6 +16,12 @@ html, body {
     
   }
 
+  .animate__flip{
+
+
+  animation-duration: 1s;
+  animation-delay: 1s;
+  }
 
   .tituloLogin{
 

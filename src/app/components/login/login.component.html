@@ -7,27 +7,19 @@
 <div class="bgimg">
   <div class="testclass">
 
-
     <br>
-
     <div align=center>
-
-      
-
       <mat-card class="example-card" class="animate__animated animate__backInLeft">
-
-     
-
         <marquee behavior="" direction="right">
           <h1 class="tituloLogin">SALA DE JUEGOS</h1>
     
 
         </marquee>
-        <img src="../assets/favicon.png" height="150"  >
+        <img src="../assets/favicon.png" height="150" class="animate__animated animate__flip" >
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
-            <input  (keyup.enter)="Login()" matInput placeholder="Correo" [(ngModel)]="unUsuario.correo" [formControl]="correo" required>
+            <input  (keyup.enter)="Login()" matInput placeholder="Correo" [(ngModel)]="unUsuario.correo"  required>
             <mat-error *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</mat-error>
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Correo</mat-hint>
