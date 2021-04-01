@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuarioFireService } from 'src/app/services/usuarios.service';
 import { FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -14,12 +15,13 @@ import { FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public unUsuario: Usuario;
-  public loged: Boolean
+  //public existe: Boolean;
+  public loged: Boolean;
 
 
 
 
-  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); this.loged = false; }
+  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario();  this.loged = false; }
 
 
 
@@ -57,27 +59,22 @@ export class LoginComponent implements OnInit {
 
   public Login() {
 
-    let listaUsuarios = this.servicioUsuario.TraerTodos().valueChanges();
 
-    listaUsuarios.forEach(i => {
-      i.forEach(j => {
-
-        if ((this.unUsuario.correo.toString() == j.correo.toString()) && (this.unUsuario.clave.toString() == j.clave.toString())) {
-     
-          
-          this.router.navigateByUrl("home");
-          this.loged = true;
-        }
-      //  this.loged = true;
-      });
-      
-     
-    });
-
-    if (this.loged == false) {
-      console.log('usuario invalido');
-      //this.dialog.open(DialogInvalid);
+   this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
+     if(result.length == 1){ 
+       
+      this.router.navigateByUrl("home");
+      console.log('existe') 
+    
+    
+    
+    
     }
+    else{ this.dialog.open(DialogElementsExampleDialog); }
+  
+  })
+   
+
 
 
   }
