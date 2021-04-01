@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario();  this.loged = false; }
+  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); this.loged = false; }
 
 
 
@@ -60,21 +60,19 @@ export class LoginComponent implements OnInit {
   public Login() {
 
 
-   this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
-     if(result.length == 1){ 
-       
-      this.router.navigateByUrl("home");
-      console.log('existe') 
-    
-    
-    
-    
-    }
-    else{ this.dialog.open(DialogElementsExampleDialog); }
-  
-  })
-   
+    this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
+      if (result.length == 1) {
 
+        this.router.navigateByUrl("home");
+        console.log('existe')
+
+
+
+
+      }
+      else { this.dialog.open(DialogElementsExampleDialog); }
+
+    })
 
 
   }
