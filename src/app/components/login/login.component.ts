@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuarioFireService } from 'src/app/services/usuarios.service';
 import { FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -66,7 +65,7 @@ export class LoginComponent implements OnInit {
     this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
       if (result.length == 1) {
 
-        localStorage.setItem('token', 'this.correo')
+        localStorage.setItem('token', this.unUsuario.correo)
 
         this.router.navigateByUrl("home");
         console.log('existe')
