@@ -57,11 +57,16 @@ export class LoginComponent implements OnInit {
 
   }
 
+
+
+
   public Login() {
 
 
     this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
       if (result.length == 1) {
+
+        localStorage.setItem('token', 'this.correo')
 
         this.router.navigateByUrl("home");
         console.log('existe')
