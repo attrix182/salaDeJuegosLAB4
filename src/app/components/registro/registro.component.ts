@@ -43,10 +43,13 @@ export class RegistroComponent implements OnInit {
 
     if (!(this.clave.value == '' && this.correo.value == '')) //revisar
     {
+   
       this.MiServicio.Crear(this.unUsuario).then(() => {
 
+        localStorage.setItem('token', this.unUsuario.correo);
         console.log('se envio el Usuario');
-        this.router.navigateByUrl("home");
+  
+      this.router.navigateByUrl("home");
 
       });
 
