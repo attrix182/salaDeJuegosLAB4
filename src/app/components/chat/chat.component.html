@@ -23,6 +23,7 @@
                 </div>
 
                 <h4 *ngFor="let item of item$ | async">
+                    {{ user }}
                     {{ item.mensaje }}
                 </h4>
 

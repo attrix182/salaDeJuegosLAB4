@@ -26,6 +26,8 @@ export class ChatComponent implements OnInit {
     this.token = '';
   }
 
+  user = localStorage.getItem('token');
+
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
     if(this.token == null)
