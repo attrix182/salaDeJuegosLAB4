@@ -54,6 +54,11 @@ export class LoginComponent implements OnInit {
 
   }
 
+  public LoginRapido() {
+this.unUsuario.clave = '123456';
+this.unUsuario.correo= "invitado@invitado.com";
+
+  }
 
 
 
@@ -72,7 +77,9 @@ export class LoginComponent implements OnInit {
 
 
       }
-      else { this.dialog.open(DialogElementsExampleDialog); }
+      else { 
+        this.dialog.open(DialogElementsExampleDialog); 
+      }
 
     })
 

@@ -43,20 +43,31 @@ export class RegistroComponent implements OnInit {
 
     if (!(this.clave.value == '' && this.correo.value == '')) //revisar
     {
-   
-      this.MiServicio.Crear(this.unUsuario).then(() => {
 
-        localStorage.setItem('token', this.unUsuario.correo);
-        console.log('se envio el Usuario');
-  
-      this.router.navigateByUrl("home");
 
-      });
+      this.MiServicio.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
+        if (result.length == 0) {
 
-    } else { console.log('Campos vacios')}
+          this.MiServicio.Crear(this.unUsuario).then(() => {
 
+            localStorage.setItem('token', this.unUsuario.correo);
+            console.log('se envio el Usuario');
+
+            this.router.navigateByUrl("home");
+
+        })
+        }
+        else{ 
+          
+          console.log('existe')
+        
+        
+        
+        }
+    })
   }
-
+}
+      
 
 
 
@@ -65,6 +76,6 @@ export class RegistroComponent implements OnInit {
 
 
   ngOnInit(): void {
-  }
+      }
 
 }

@@ -30,6 +30,7 @@ import {AngularFireModule} from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     HomeComponent,
     QuiensoyComponent,
-    RegistroComponent
+    RegistroComponent,
+    ChatComponent
   ],
   imports: [
 
