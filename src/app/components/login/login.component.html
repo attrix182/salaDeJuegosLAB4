@@ -19,7 +19,7 @@
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
-            <input  (keyup.enter)="Login()" matInput placeholder="Correo" [(ngModel)]="unUsuario.correo"  required>
+            <input (keyup.enter)="Login()" matInput placeholder="Correo" [(ngModel)]="unUsuario.correo"  required>
             <mat-error *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</mat-error>
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Correo</mat-hint>

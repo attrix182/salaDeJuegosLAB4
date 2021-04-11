@@ -30,9 +30,9 @@
 
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input  [(ngModel)]="mensaje.mensaje" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <input (keyup.enter)="Enviar()" [(ngModel)]="mensaje.mensaje" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                         <span class="input-group-btn">
-                            <button (click)="Enviar()" class="btn btn-warning btn-sm" id="btn-chat" style="background-color: black; border-color: black;"  >
+                            <button  (click)="Enviar()" class="btn btn-warning btn-sm" id="btn-chat" style="background-color: black; border-color: black;"  >
                                 Enviar</button>
                         </span>
                     </div>
