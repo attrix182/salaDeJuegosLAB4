@@ -114,6 +114,7 @@
  * limitations under the License.
  */
 
+ 
 
 
 
@@ -179,27 +180,42 @@
 }
 
 .example-full-width {
-  width: 90%;
-
+  width: 80%;
+  max-width: 985px;
+  margin: auto;
+ 
 }
 
-.cardInput
-{
-  max-width: 100;
-
-
-}
 
 .chat-write-box {
   position: fixed;
-  bottom: 1em;
+  bottom: 0;
   width: 95%;
+  max-width: 985px;
+  margin: auto;
+
+  display: block;
+  
 }
+
+.msjs
+ {
+   max-width: 1000px;
+   max-height: 1500px;
+   margin: auto;
+ }
 
 .btnEnviar
 {
 
 background-color:black;
 border-radius: 50%;
+margin: auto;
+
+}
+
+.msg-container{
+  max-height:790px;
+  overflow-y:scroll;
 
 }
