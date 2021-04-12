@@ -217,5 +217,9 @@ margin: auto;
 .msg-container{
   max-height:790px;
   overflow-y:scroll;
+  overflow-x: hidden;
+  
+
+
 
 }
