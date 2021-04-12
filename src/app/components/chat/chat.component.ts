@@ -16,46 +16,56 @@ export class ChatComponent implements OnInit {
 
   item$: Observable<any[]>;
 
-  token:any;
+  token: any;
+
+  d = new Date();
+
+  //hora: string;
 
 
   constructor(private router: Router, private MiServicio: MensajeService, firestore: MensajeService) {
-    
+
     this.mensaje = new Mensaje();
     this.item$ = firestore.ObtenerTodos().valueChanges();
-    this.token = '';
+    this.mensaje.usuario = localStorage.getItem('token') || 'Anonimo';
+    this.mensaje.hora = this.d.getHours() + ':' + this.d.getMinutes();;
+
   }
 
-  user = localStorage.getItem('token');
+
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
-    if(this.token == null)
-    {
+
+    if (this.token == null) {
       this.router.navigateByUrl("login");
 
     }
-    
-  }
-
-
-  Deslogearse() {
-
-    localStorage.removeItem('token');
-    this.router.navigateByUrl("login");
 
   }
+
+
+
 
   Enviar() {
 
 
     this.MiServicio.Crear(this.mensaje).then(() => {
 
-      this.mensaje.mensaje = ''
-      console.log('se envio el msj FIRE');
+      this.mensaje.mensaje = '';
+
+
+      console.log('se envio el msj FIRE', this.token);
 
     });
 
+
+  }
+
+  Deslogearse() {
+
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("login");
 
   }
 

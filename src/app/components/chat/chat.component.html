@@ -1,7 +1,7 @@
 <mat-toolbar class="navColor">
-    <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+    <button mat-raised-button (click)="Deslogearse()" class="nav-link ">DESLOGUEARSE</button>
 
-    <button  mat-raised-button routerLink="../home" class="nav-link">HOME</button>
+    <button mat-raised-button routerLink="../home" class="nav-link">HOME</button>
 
 </mat-toolbar>
 
@@ -12,45 +12,67 @@
 
     <br>
 
-<div class="container">
-    <div class="row" >
-        <div  class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading" >
-                    <span class="glyphicon glyphicon-comment"></span> Chat
-                    <div class="btn-group pull-right"> 
+
+    <!--     <div class="container">
+        <div class="row msg-container">
+
+            <div class="col m12 col s12">
+                <div class="box-blue">
+
+                    <p>Content</p>
+                    <div>
+                        <strong>Invite</strong>&nbsp;
+                        <span class="date">Fecha</span>
                     </div>
                 </div>
+            </div> -->
 
-                <h4 *ngFor="let item of item$ | async">
-                    {{ user }}
-                    {{ item.mensaje }}
-                </h4>
+    <!--            <div *ngFor="let item of item$ | async" >
+            <div class="col m12 col s12">
+                <div *ngIf="item.usuario != token"  class="box-blue">
 
-
-
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input (keyup.enter)="Enviar()" [(ngModel)]="mensaje.mensaje" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-                        <span class="input-group-btn">
-                            <button  (click)="Enviar()" class="btn btn-warning btn-sm" id="btn-chat" style="background-color: black; border-color: black;"  >
-                                Enviar</button>
-                        </span>
+                    <p> {{ item.mensaje }} </p>
+                    <div>
+                        <strong>   {{ item.usuario }} </strong>&nbsp;
+                        <span class="date">00:00</span>
                     </div>
                 </div>
             </div>
+        </div> -->
+
+    <div *ngFor="let item of item$ | async">
+        <div class="col m12 col s12">
+
+            <div *ngIf="item.usuario == token" class="box-blue  ">
+
+                <p> {{ item.mensaje }} </p>
+            
+                    <strong> {{ item.usuario }} </strong>&nbsp;
+                    <span class="date "> {{ item.hora }}</span>
+
+            </div>
+
+            <div *ngIf="item.usuario != token" class="box-gray">
+
+                <p> {{ item.mensaje }} </p>
+                <strong> {{ item.usuario }} </strong>&nbsp;
+                <span class="date"> {{ item.hora }}</span>
+            </div>
         </div>
     </div>
+
+
+
+
 </div>
 
+<mat-card class="chat-write-box">
+    <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input (keyup.enter)="Enviar()" [(ngModel)]="mensaje.mensaje" type="email" matInput autocomplete="off">
+    </mat-form-field>
+
+    <button mat-fab color="primary" (click)="Enviar()">Enviar</button>
 
 
-
-
-
-    
-</div>
-
-
-
-
+</mat-card>

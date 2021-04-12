@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore/';
 import { Mensaje } from '../clases/mensaje';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 
 
 @Injectable({
@@ -10,10 +11,10 @@ export class MensajeService {
 
   
   rutaDeLaColeccion = '/mensajes';
-  referenciaAlaColeccion: AngularFirestoreCollection<Mensaje>;
+  referenciaAlaColeccion: AngularFireList<Mensaje>;
 
-  constructor(private bd: AngularFirestore) {
-    this.referenciaAlaColeccion = bd.collection(this.rutaDeLaColeccion);
+  constructor(private bd: AngularFireDatabase) {
+    this.referenciaAlaColeccion = bd.list(this.rutaDeLaColeccion);
 
   }
 
@@ -22,10 +23,10 @@ export class MensajeService {
 
   Crear(mensaje:Mensaje):any
   {
-    return this.referenciaAlaColeccion.add({...mensaje});
+    return this.referenciaAlaColeccion.push(mensaje);
   }
 
-  ObtenerTodos():AngularFirestoreCollection<Mensaje>
+  ObtenerTodos():AngularFireList<Mensaje>
   {
     return this.referenciaAlaColeccion;
   }
