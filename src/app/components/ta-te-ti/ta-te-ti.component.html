@@ -1,69 +1,47 @@
-<mat-toolbar class="navColor">
-    <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+<mat-card class="example-card ">
+    <mat-card-header>
+        <mat-card-title>TA TE TI</mat-card-title>
+        <mat-card-subtitle>Tres en raya</mat-card-subtitle>
+    </mat-card-header>
 
+    <mat-card-content>
 
-    <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile><h2>Bot: 0</h2></mat-grid-tile>
+            <mat-grid-tile> <h2>Jugador: 0</h2></mat-grid-tile>
 
-
-</mat-toolbar>
-
-
-
-<div class="bgimg">
-
-<br>
-
- 
-
-        <mat-card class="example-card " >
-            <mat-card-header>
-                <mat-card-title>TA TE TI</mat-card-title>
-                <mat-card-subtitle>Tres en raya</mat-card-subtitle>
-            </mat-card-header>
-
-            <mat-card-content>
-               
-                    <table style="width:500px;height:500px;text-align: center" align="center">
-                        <tr>
-                            <td id="cell11" class="cell"></td>
-                            <td id="cell12" class="cell"></td>
-                            <td id="cell13" class="cell"></td>
-                        </tr>
-                        <tr>
-                            <td id="cell21" class="cell"></td>
-                            <td id="cell22" class="cell"></td>
-                            <td id="cell23" class="cell"></td>
-                        </tr>
-                        <tr>
-                            <td id="cell31" class="cell"></td>
-                            <td id="cell32" class="cell"></td>
-                            <td id="cell33" class="cell"></td>
-                        </tr>
-                    </table>
-
-                    <h2 class="game--status"></h2>
-                    <button    class="button1" id="reset" type="button" value="RESET" class="mat-raised-button game--restart">Restart Game</button>
-            
+          </mat-grid-list>
 
 
 
-                
+        <table style="width:500px;height:500px;text-align: center" align="center">
+            <tr>
+                <td id="cell11" class="cell"></td>
+                <td id="cell12" class="cell"></td>
+                <td id="cell13" class="cell"></td>
+            </tr>
+            <tr>
+                <td id="cell21" class="cell"></td>
+                <td id="cell22" class="cell"></td>
+                <td id="cell23" class="cell"></td>
+            </tr>
+            <tr>
+                <td id="cell31" class="cell"></td>
+                <td id="cell32" class="cell"></td>
+                <td id="cell33" class="cell"></td>
+            </tr>
+        </table>
 
-            </mat-card-content>
-            <mat-card-actions>   
-            </mat-card-actions>
-        </mat-card>
+        <h2 class="game--status"></h2>
+        <button mat-raised-button class="button1" id="reset" type="button" value="RESET" class="  game--restart">Restart
+            Game</button>
 
 
 
 
 
-        
- 
 
-            
-        
-          
-       
-
-</div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>

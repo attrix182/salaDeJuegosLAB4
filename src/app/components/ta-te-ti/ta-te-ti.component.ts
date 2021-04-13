@@ -20,6 +20,7 @@ export class TaTeTiComponent implements OnInit {
 
 
   ngOnInit(): void {
+   
   }
 
 
