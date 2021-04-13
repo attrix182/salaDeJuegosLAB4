@@ -34,6 +34,9 @@ import { ChatComponent } from './components/chat/chat.component';
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,

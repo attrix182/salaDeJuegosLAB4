@@ -13,8 +13,9 @@
 
 <br>
 
-    <div align='center'>
-        <mat-card class="example-card">
+ 
+
+        <mat-card class="example-card " >
             <mat-card-header>
                 <mat-card-title>TA TE TI</mat-card-title>
                 <mat-card-subtitle>Tres en raya</mat-card-subtitle>
@@ -22,27 +23,38 @@
 
             <mat-card-content>
                
-                <section>
-         
-                    <div class="game--container">
-                        <div data-cell-index="0" class="cell"></div>
-                        <div data-cell-index="1" class="cell"></div>
-                        <div data-cell-index="2" class="cell"></div>
-                        <div data-cell-index="3" class="cell"></div>
-                        <div data-cell-index="4" class="cell"></div>
-                        <div data-cell-index="5" class="cell"></div>
-                        <div data-cell-index="6" class="cell"></div>
-                        <div data-cell-index="7" class="cell"></div>
-                        <div data-cell-index="8" class="cell"></div>
-                    </div>
+                    <table style="width:500px;height:500px;text-align: center" align="center">
+                        <tr>
+                            <td id="cell11" class="cell"></td>
+                            <td id="cell12" class="cell"></td>
+                            <td id="cell13" class="cell"></td>
+                        </tr>
+                        <tr>
+                            <td id="cell21" class="cell"></td>
+                            <td id="cell22" class="cell"></td>
+                            <td id="cell23" class="cell"></td>
+                        </tr>
+                        <tr>
+                            <td id="cell31" class="cell"></td>
+                            <td id="cell32" class="cell"></td>
+                            <td id="cell33" class="cell"></td>
+                        </tr>
+                    </table>
+
                     <h2 class="game--status"></h2>
-                    <button    class="mat-raised-button game--restart">Restart Game</button>
-                </section>
+                    <button    class="button1" id="reset" type="button" value="RESET" class="mat-raised-button game--restart">Restart Game</button>
+            
+
+
+
+                
 
             </mat-card-content>
             <mat-card-actions>   
             </mat-card-actions>
         </mat-card>
+
+
 
 
 

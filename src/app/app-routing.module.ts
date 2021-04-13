@@ -7,6 +7,7 @@ import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/pie
 import {RegistroComponent} from './components/registro/registro.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 
+
 const routes: Routes = [
   {
     path: '',
