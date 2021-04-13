@@ -31,6 +31,8 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './components/chat/chat.component';
+import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
+import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ChatComponent } from './components/chat/chat.component';
     HomeComponent,
     QuiensoyComponent,
     RegistroComponent,
-    ChatComponent
+    ChatComponent,
+    PiedraPapelTijeraComponent,
+    TaTeTiComponent
   ],
   imports: [
 
