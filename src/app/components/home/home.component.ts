@@ -10,6 +10,15 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   token:any;
 
+
+  playTateti() {
+    location.assign('/juegos/tateti');
+  }
+
+  goChat() {
+    location.assign('/chat');
+  }
+  
   constructor( private router: Router) { this.token = '';} 
 
   ngOnInit(): void {

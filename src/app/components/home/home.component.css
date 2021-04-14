@@ -1,6 +1,6 @@
 .example-card {
 
-    max-width: 600px;
+    max-width: 500px;
 
   }
   
@@ -15,6 +15,7 @@
     height:100%;
     background: url('../../../assets/background.gif')  center center fixed;
     background-repeat: repeat;
+
   }
 
   .navColor {

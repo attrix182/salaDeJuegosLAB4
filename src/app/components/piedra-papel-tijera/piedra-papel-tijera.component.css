@@ -42,12 +42,14 @@ p {
     
     display:grid;
     grid-template-columns: 2fr 1fr;
+      
   }
   
   .score{
     margin-top:.5em;
     margin-left:2em;
     font-size:1.5em;
+
  
   }
   
@@ -64,6 +66,7 @@ p {
   .content2{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  
   }
   
   .fa{
@@ -82,11 +85,12 @@ p {
 
   .example-card {
     margin: auto;
-    max-width: 600px;
+    max-width: 450px;
   }
   
   .spinner{
     color: #2B34C4;
   }
 
+  
 

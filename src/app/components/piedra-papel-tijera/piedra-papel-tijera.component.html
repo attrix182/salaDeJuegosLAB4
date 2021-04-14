@@ -1,15 +1,17 @@
 <mat-toolbar class="navColor">
   
 
-  <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+  
   <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+  <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+
 
 </mat-toolbar>
 
 
 
 <div class="bgimg">
-
+B
 <br>
 
 
@@ -21,7 +23,7 @@
 
   <mat-card-content>
 
-    <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-list cols="2" rowHeight="2:1" class="list">
 
 
     </mat-grid-list>
@@ -46,7 +48,7 @@
       <mat-card>
         <mat-card-content>
           <div class="content1">
-            <h2> Bot 2</h2>
+            <h2> Bot</h2>
             <button mat-fab color="accent" class="score scoreDos">{{ scores[1] }}</button>
 
           </div>

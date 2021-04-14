@@ -7,14 +7,18 @@ import { Router } from '@angular/router';
   templateUrl: './ta-te-ti.component.html',
   styleUrls: ['./ta-te-ti.component.css']
 })
+
+
+
 export class TaTeTiComponent implements OnInit {
 
 
   
 
+
   constructor(private router: Router) {
 
-
+  
   }
 
 
@@ -32,9 +36,6 @@ export class TaTeTiComponent implements OnInit {
   }
 
 
-
-
-
 }
 
 
@@ -45,6 +46,11 @@ class TicTacToe { // Everything Inside A Class !.
 
   symbol: number = -1; //Initializing symbol varible to be a 'number' type with initial value '-1'.
   gameRunning: boolean = true; //Initializing gameRunning variable of 'boolean' type with initial value 'true'.
+  
+
+  
+
+
 
   constructor(t: HTMLElement[]) { // Constructor 
       this.table = t;
@@ -90,6 +96,8 @@ class TicTacToe { // Everything Inside A Class !.
                   if (this.win(this.board) == 1) { // checking for win condition by AI.
                       this.gameRunning = false; // If won make the game running state to false.
                       console.log("You have won!");  // Not Possible. 
+                     
+
                   } else {
                       if (this.IsFull()) {
                           this.gameRunning = false; // Else Draw condition possible if all moves are complete.
@@ -102,6 +110,7 @@ class TicTacToe { // Everything Inside A Class !.
                           if (this.win(this.board) == -1) {
                               this.gameRunning = false; //checking for win condition by AI.
                               console.log("You have lost!"); // User Has Lost.
+                         
                           } else {
                               if (this.IsFull()) {
                                   this.gameRunning = false; //Else Draw condition possible if all moves are complete.

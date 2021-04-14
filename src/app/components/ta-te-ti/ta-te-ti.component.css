@@ -1,11 +1,9 @@
 .example-card {
     margin: auto;
-    max-width: 600px;
+    max-width: 350px;
   }
   
-  html, body {
-    height: 100%;
-  }
+
   
   .bgimg {
     display:block;
@@ -17,6 +15,7 @@
   .navColor {
 
     background-color: white;
+ 
 
   }
 
@@ -25,12 +24,18 @@
 
     background-color: black;
     color: white;
+ 
   }
 
 
 
 
 
+.tablero
+{
+  max-width: 300px;
+  max-height: 300px;
+}
 
 
 h1 {

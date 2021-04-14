@@ -58,23 +58,12 @@ export class PiedraPapelTijeraComponent  {
  checkResult(): void {
    const playerPick = this.playerSelected;
    const enemyPick = this.enemySelected;
-  // if you and the enemy have the same weapon, then it is a tie.
+
    if( playerPick ==  enemyPick)
     {
     this.theResult = 2;
   }
-  // let's say you picked rock ( 0 ) 
-  // and the enemy picked paper ( 1 )
-  // you lose because ( 0 - 1 + 3 ) % 3  is equal to 2.
 
-  // when you picked rock ( 0 )
-  // and the enemy picked scissor ( 2 )
-  // you win because ( 0 - 2 + 3) % 3 is equal to 1.
-
-  // when you picked scissor ( 2 )
-  // and the enemy picked paper ( 1 )
-  // you win because ( 2 - 1 + 3 ) % 3 is equal to 1. 4 % 3 is 1.
-  // Hope you get the picture.
     else if ( (playerPick - enemyPick + 3)% 3 == 1)    {
       // YOU WIN
       this.theResult = 0;

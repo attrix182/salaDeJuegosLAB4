@@ -2,11 +2,11 @@
     <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
 
 
-    <button  mat-raised-button routerLink="../chat" class="nav-link" style="margin: 10px;" >CHAT</button>
-
-    <h3>Bienvenido {{token}}</h3>
-
+    <button  mat-raised-button (click)="goChat()" class="nav-link" style="margin: 10px;" >CHAT</button>
+<br>
 </mat-toolbar>
+
+<b  style="margin: 25px;" >Bienvenido {{token}}<b>
 
 
 
@@ -28,7 +28,7 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button routerLink="/juegos/tateti" class="btnPlay" >Jugar</button>
+                    <button mat-raised-button (click)="playTateti()" class="btnPlay" >Jugar</button>
                 </mat-card-actions>
             </mat-card>
 

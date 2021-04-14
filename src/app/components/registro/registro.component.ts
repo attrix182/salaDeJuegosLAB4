@@ -3,6 +3,7 @@ import { UsuarioFireService } from './../../services/usuarios.service';
 import { Usuario } from '../../clases/usuario'
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class RegistroComponent implements OnInit {
 
   unUsuario: Usuario;
 
-  constructor(private MiServicio: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); }
+  constructor(private MiServicio: UsuarioFireService, private router: Router, public dialog: MatDialog) { this.unUsuario = new Usuario(); }
 
 
 
@@ -60,7 +61,7 @@ export class RegistroComponent implements OnInit {
         else{ 
           
           console.log('existe')
-        
+          this.dialog.open(DialogElementsExampleDialog); 
         
         
         }
@@ -79,3 +80,9 @@ export class RegistroComponent implements OnInit {
       }
 
 }
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  templateUrl: 'dialog-elements-example-dialog.html',
+})
+export class DialogElementsExampleDialog { }
