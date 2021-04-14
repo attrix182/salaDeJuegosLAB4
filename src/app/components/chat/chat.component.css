@@ -218,8 +218,21 @@ margin: auto;
   max-height:790px;
   overflow-y:scroll;
   overflow-x: hidden;
-  
 
 
 
+
+}
+
+.chat {
+  list-style: none;
+  background: none;
+  margin: 0;
+  padding: 0 0 0 0;
+  position: absolute;
+  top:60px;
+  height: 80vh; 
+  width: 100%;
+  overflow-y: scroll;
+  padding-right: 17px;
 }
