@@ -1,6 +1,7 @@
 .example-card {
 
     max-width: 600px;
+
   }
   
   html, body {
@@ -25,6 +26,12 @@
   .nav-link{
 
 
+    background-color: black;
+    color: white;
+  }
+
+  .btnPlay
+  {
     background-color: black;
     color: white;
   }
