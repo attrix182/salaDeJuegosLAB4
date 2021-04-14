@@ -83,7 +83,8 @@ class TicTacToe { // Everything Inside A Class !.
                   alert("Invalid!!");
               }
               else {
-                  this.table[p].style.color = "#111111"; // setting color for user.
+                
+                  this.table[p].style.color = "#2B34C4"; // setting color for user.
                   this.table[p].innerHTML = "X"; //setting 'X' for user.
                   this.board[p] = 1; // setting user move to the board array as 1.
                   if (this.win(this.board) == 1) { // checking for win condition by AI.
@@ -96,7 +97,7 @@ class TicTacToe { // Everything Inside A Class !.
                       } else {
                           let v = this.minimax(-1, true); // call the minMax function to get the AI's move Index against the user in the board
                           this.board[v] = -1; // setting AI move to the board array as 1.
-                          this.table[v].style.color = "#111111"; // setting color for AI.
+                          this.table[v].style.color = "#FF59FE"; // setting color for AI.
                           this.table[v].innerHTML = "O"; // setting 'O' for user.
                           if (this.win(this.board) == -1) {
                               this.gameRunning = false; //checking for win condition by AI.

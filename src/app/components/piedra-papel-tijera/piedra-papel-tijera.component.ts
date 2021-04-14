@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -6,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./piedra-papel-tijera.component.css']
 })
 export class PiedraPapelTijeraComponent  {
+
+  constructor(private router: Router){}
+
+  Deslogearse(){
+
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("login");
+
+  }
 
   scores = [0 , 0];
   weapons = [

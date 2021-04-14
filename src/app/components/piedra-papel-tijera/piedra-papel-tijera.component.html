@@ -1,3 +1,18 @@
+<mat-toolbar class="navColor">
+  
+
+  <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+  <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+
+</mat-toolbar>
+
+
+
+<div class="bgimg">
+
+<br>
+
+
 <mat-card class="example-card ">
   <mat-card-header>
     <mat-card-title>RPS</mat-card-title>
@@ -15,15 +30,15 @@
       <mat-card>
         <mat-card-content>
           <div class="content1">
-            <h2> You</h2>
-            <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+            <h2> Tu</h2>
+            <button mat-fab color="primary" class="score scoreUno">{{ scores[0] }}</button>
           </div>
-          <h3> Choose your weapon: </h3>
+          <h3> Elije tu jugada: </h3>
           <div class="content2">
             <i (click)="pick(0)" [ngClass]="{'selectedWeapon':(playerSelected === 0)}" class="fa fa-hand-rock-o"></i>
             <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}" class="fa fa-hand-paper-o"></i>
             <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"
-              class="fa fa-hand-scissors-o"></i>
+              class="fa fa-hand-scissors-o "></i>
           </div>
 
         </mat-card-content>
@@ -31,16 +46,16 @@
       <mat-card>
         <mat-card-content>
           <div class="content1">
-            <h2> Player 2</h2>
-            <button mat-fab color="accent" class="score">{{ scores[1] }}</button>
+            <h2> Bot 2</h2>
+            <button mat-fab color="accent" class="score scoreDos">{{ scores[1] }}</button>
 
           </div>
           <br><br>
 
           <div *ngIf="enemySelected !== -1" class="flex-container flex-center">
-            <i *ngIf="enemySelected === 0" class="fa fa-hand-rock-o"></i>
-            <i *ngIf="enemySelected === 1" class="fa fa-hand-paper-o"></i>
-            <i *ngIf="enemySelected === 2" class="fa fa-hand-scissors-o"></i>
+            <i *ngIf="enemySelected === 0" class="fa fa-hand-rock-o botWeapon"></i>
+            <i *ngIf="enemySelected === 1" class="fa fa-hand-paper-o botWeapon"></i>
+            <i *ngIf="enemySelected === 2" class="fa fa-hand-scissors-o botWeapon"></i>
           </div>
         </mat-card-content>
       </mat-card>
@@ -59,12 +74,12 @@
         </ng-template>
         <ng-template ngSwitchDefault> </ng-template>
       </div>
-      <p> Seleccione para continuar o </p>
-      <button (click)="reset()" mat-raised-button color="primary"> Reiniciar puntajes</button>
+      <p> Siga jugando para continuar o </p>
+      <button (click)="reset()" mat-raised-button class="scoreUno" style="color: white;"> Reiniciar puntajes</button>
     </div>
 
-    <div class="flex-container flex-center" *ngIf="loading">
-      <mat-spinner></mat-spinner>
+    <div class="flex-container flex-center " *ngIf="loading">
+      <mat-spinner class="spinner"></mat-spinner>
     </div>
 
 
