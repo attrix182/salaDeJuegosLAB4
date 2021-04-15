@@ -24,7 +24,7 @@ export class ChatComponent implements AfterViewInit, OnInit{
   d = new Date();
 
   private scrollContainer: any;
-  private items = [];
+
 
   //hora: string;
 

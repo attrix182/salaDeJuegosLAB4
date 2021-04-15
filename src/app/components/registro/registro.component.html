@@ -12,25 +12,23 @@
     <br>
     <br>
     <div align=center>
-      <mat-card class="example-card" class="animate__animated animate__backInLeft"> 
+      <mat-card class="example-card" class="animate__animated animate__backInLeft">
         <h1>REGISTRO</h1>
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
-            <input (keyup.enter)="Registro()" matInput placeholder="Correo"   [(ngModel)]="unUsuario.correo" [formControl]="correo" required>
+            <input (keyup.enter)="Registro()" matInput placeholder="Correo" [(ngModel)]="unUsuario.correo" required>
             <mat-error *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</mat-error>
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Correo</mat-hint>
           </mat-form-field>
-
-          
-          
         </p>
 
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su contraseña</mat-label>
-            <input (keyup.enter)="Registro()"  matInput placeholder="Contraseña" type="password"  [(ngModel)]="unUsuario.clave" required>
+            <input (keyup.enter)="Registro()" matInput placeholder="Contraseña" type="password"
+              [(ngModel)]="unUsuario.clave" required>
             <mat-error *ngIf="clave.invalid">{{getErrorMessageClave()}}</mat-error>
             <mat-icon matSuffix>lock</mat-icon>
             <mat-hint>Contraseña</mat-hint>
@@ -38,12 +36,12 @@
         </p>
 
 
-        <button mat-raised-button class="loginColor"   (click)="Registro()">Registrarse</button>
+        <button mat-raised-button class="loginColor" (click)="Registro()">Registrarse</button>
 
         <div id="errorLogin">
           <h6 id="msjError"></h6>
         </div>
-    
+
 
       </mat-card>
 

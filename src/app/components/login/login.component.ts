@@ -23,20 +23,15 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); this.loged = false; }
 
 
-
-
-
-
   correo = new FormControl('', [Validators.required, Validators.email]);
-  clave = new FormControl('', [Validators.required]);
+  clave = new FormControl('', [Validators.required, Validators.required]);
 
   getErrorMessageCorreo() {
     if (this.correo.hasError('required')) {
       return 'Debes ingresar un valor';
     }
 
-    return this.correo.hasError('email') ? 'No es un correo valido.' : '';
-
+    return this.correo.hasError('email') ? 'No es un correo valido' : '';
 
   }
 
@@ -52,8 +47,8 @@ export class LoginComponent implements OnInit {
   }
 
   public LoginRapido() {
-this.unUsuario.clave = '123456';
-this.unUsuario.correo= "invitado@invitado.com";
+    this.unUsuario.clave = '123456';
+    this.unUsuario.correo = "invitado@invitado.com";
 
   }
 
@@ -69,13 +64,9 @@ this.unUsuario.correo= "invitado@invitado.com";
 
         this.router.navigateByUrl("home");
         console.log('existe')
-
-
-
-
       }
-      else { 
-        this.dialog.open(DialogElementsExampleDialog); 
+      else {
+       // this.dialog.open(DialogElementsExampleDialog);
       }
 
     })
