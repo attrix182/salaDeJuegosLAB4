@@ -74,7 +74,7 @@ export class RegistroComponent implements OnInit {
         else{ 
           
           console.log('existe');
-          this.dialog.open(DialogElementsExampleDialog); 
+          //this.dialog.open(DialogElementsExampleDialog); 
         
         }
     })
