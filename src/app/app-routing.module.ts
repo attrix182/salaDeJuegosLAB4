@@ -4,6 +4,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { HomeComponent } from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
+import { QuiensoyComponent } from './components/quiensoy/quiensoy.component';
 import {RegistroComponent} from './components/registro/registro.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
 
+  { path: 'quiensoy', component: QuiensoyComponent },
   { path: 'home', component: HomeComponent },
   { path: 'chat', component: ChatComponent },
 

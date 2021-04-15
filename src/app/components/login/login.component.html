@@ -10,12 +10,10 @@
     <br>
     <div align=center>
       <mat-card class="example-card" class="animate__animated animate__backInLeft">
-        <marquee behavior="" direction="right">
+
           <h1 class="tituloLogin">SALA DE JUEGOS</h1>
     
-
-        </marquee>
-        <img src="../assets/favicon.png" height="150" class="animate__animated animate__flip" >
+        <img src="../assets/favicon.png" height="150">
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Ingrese su correo</mat-label>
@@ -38,10 +36,13 @@
 
 
         <button mat-raised-button class="loginColor" (click)="Login()"  >INICIAR SESION</button>
+           
+       <div class="testclass " *ngIf="cargando==true">
+        <mat-spinner class="spinner"></mat-spinner>
+      </div>
 
        <p> <br><button mat-raised-button class="loginRapidoColor" (click)="LoginRapido()"  >INICIAR RAPIDO</button></p>
-     
-
+ 
 
       </mat-card>
 

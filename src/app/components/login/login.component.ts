@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   public unUsuario: Usuario;
   //public existe: Boolean;
   public loged: Boolean;
+  cargando: boolean;
 
 
 
@@ -62,11 +63,13 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem('token', this.unUsuario.correo)
 
+        this.cargando = true;
         this.router.navigateByUrl("home");
         console.log('existe')
       }
       else {
-       // this.dialog.open(DialogElementsExampleDialog);
+        //this.cargando = true;
+         this.dialog.open(DialogElementsExampleDialog);
       }
 
     })

@@ -1,6 +1,3 @@
-html, body {
-    height: 100%;
-  }
   
   .bgimg {
     display:block;
@@ -16,12 +13,7 @@ html, body {
     
   }
 
-  .animate__flip{
 
-
-  animation-duration: 1s;
-  animation-delay: 1s;
-  }
 
   .tituloLogin{
 
