@@ -8,10 +8,18 @@ import { Router } from '@angular/router';
 })
 export class QuiensoyComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  token:any;
+
+  constructor( private router: Router) {  this.token = '';}
 
   ngOnInit(): void {
+
+    
+    this.token = localStorage.getItem('token'); 
+
   }
+
+
 
   Deslogearse(){
 
