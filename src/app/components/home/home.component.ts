@@ -15,10 +15,7 @@ export class HomeComponent implements OnInit {
     location.assign('/juegos/tateti');
   }
 
-  goChat() {
-    location.assign('/chat');
-  }
-  
+
   constructor( private router: Router) { this.token = '';} 
 
   ngOnInit(): void {
@@ -31,6 +28,11 @@ export class HomeComponent implements OnInit {
 
     }
     
+  }
+
+  goQuienSoy()
+  {
+    location.assign("/quiensoy");
   }
 
   Deslogearse(){

@@ -21,7 +21,11 @@ export class ChatComponent implements AfterViewInit, OnInit{
 
   token: any;
 
+  
+
   d = new Date();
+
+
 
   private scrollContainer: any;
 

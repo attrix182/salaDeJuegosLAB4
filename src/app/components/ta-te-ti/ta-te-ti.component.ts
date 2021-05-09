@@ -27,6 +27,11 @@ export class TaTeTiComponent implements OnInit {
    
   }
 
+  goChat() {
+    location.assign('/chat');
+  }
+  
+
 
   Deslogearse(){
 

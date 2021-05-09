@@ -2,10 +2,9 @@
     <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
 
 
-    <button  mat-raised-button (click)="goChat()" class="nav-link" style="margin: 10px;" >CHAT</button>
 
 
-  <button  mat-raised-button routerLink="../quiensoy" class="nav-link" style="margin: 5px;" >Quien Soy</button>
+  <button  mat-raised-button (click)="goQuienSoy()" class="nav-link" style="margin: 5px;" >Quien Soy</button>
 <br>
 </mat-toolbar>
 
@@ -66,4 +65,44 @@
 
     </div>
 
+
+
+<br>
+
+
+<div class="bgimg">
+    <div class="testclass">
+        <div align='center'>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>MEMOTEST</mat-card-title>
+                    <mat-card-subtitle>Recuerda la tarjeta</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image
+                    src="https://image.flaticon.com/icons/png/512/103/103228.png"
+                    alt="Photo of a Shiba Inu">
+
+
+
+                <mat-card-content>
+                    <p>
+                        El juego consiste en encontrar 2 cartas iguales.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button   mat-raised-button routerLink="/juegos/memotest"  class="btnPlay">Jugar</button>
+                </mat-card-actions>
+            </mat-card>
+    
+        </div>
+
+    </div>
+
+
+
+
 </div>
+
+
+
+

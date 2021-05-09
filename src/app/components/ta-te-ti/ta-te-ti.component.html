@@ -4,6 +4,8 @@
 
     <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
 
+    <button  mat-raised-button (click)="goChat()" class="nav-link" style="margin: 1px;" >CHAT</button>
+
 
 </mat-toolbar>
 
@@ -15,13 +17,8 @@
 
 
 
-
-
 <mat-card class="example-card ">
-    <mat-card-header>
-        <mat-card-title>TA TE TI</mat-card-title>
-        <mat-card-subtitle>Tres en raya</mat-card-subtitle>
-    </mat-card-header>
+
 
     <mat-card-content>
 
@@ -33,7 +30,7 @@
 
 
 
-        <table style="width:500px;height:500px;text-align: center" align="center" class="tablero">
+        <table style="width:400px;height:400px;text-align: center" align="center" class="tablero">
             <tr>
                 <td id="cell11" class="cell"></td>
                 <td id="cell12" class="cell"></td>
@@ -55,14 +52,12 @@
         <button mat-raised-button class="button1" id="reset" style="background-color: #2B34C4; color: white;" type="button" value="RESET" class="  game--restart">Reiniciar
         Juego</button>
 
-
-
-
-
-
     </mat-card-content>
     <mat-card-actions>
     </mat-card-actions>
 </mat-card>
 
+<div>
+    <app-chat></app-chat>
+    </div>
 </div>
