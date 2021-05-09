@@ -1,0 +1,42 @@
+
+
+
+
+    <br>
+
+    <div class="row msg-container frame" #scrollframe >
+        <div class="msjs">
+            <div *ngFor="let item of item$ | async">
+                <div class="col m12 col s12">
+
+                    <div *ngIf="item.usuario == token" class="box-blue  ">
+
+                        <p> {{ item.mensaje }} </p>
+
+                        <strong> {{ item.usuario }} </strong>&nbsp;
+                        <span class="date "> {{ item.hora }}</span>
+
+                    </div>
+
+                    <div *ngIf="item.usuario != token" class="box-gray">
+
+                        <p> {{ item.mensaje }} </p>
+                        <strong> {{ item.usuario }} </strong>&nbsp;
+                        <span class="date"> {{ item.hora }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <mat-card class="chat-write-box" align="center">
+        <mat-form-field class="example-full-width " >
+            <mat-label></mat-label>
+            <input  class="msgText" (keyup.enter)="Enviar()" [(ngModel)]="mensaje.mensaje" type="email" matInput autocomplete="off">
+        </mat-form-field>
+    
+        <!-- <button class="btnEnviar" mat-fab color="primary" (click)="Enviar()">Enviar</button> -->
+    </mat-card>

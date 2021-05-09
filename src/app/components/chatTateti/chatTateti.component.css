@@ -1,0 +1,161 @@
+.example-card {
+
+    max-width: 600px;
+  }
+  
+
+  
+
+  .navColor {
+
+    background-color: white;
+
+  }
+
+  .nav-link{
+
+
+    background-color: black;
+    color: white;
+  }
+
+
+
+.box-blue{
+  background-color: #2B34C4;
+  color: #FFF;
+  margin: 2%;
+  position: relative;
+  background: #2B34C4;
+  border: 4px solid #2B34C4;
+  padding: 2%;
+  border-radius: 5px;
+  text-align: left;
+  
+}
+
+.box-blue:after, .box-blue:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  
+
+}
+
+.box-blue:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: #2B34C4;
+  border-width: 11px;
+  margin-top: -10px;
+}
+
+.box-gray {
+  margin: 2%;
+  position: relative;
+  color: #FFF;
+  /*font-weight: bold;*/
+  background: #FF59FE;
+  border: 4px solid #FF59FE;
+  padding: 2%;
+  border-radius: 5px;
+  text-align: right;
+}
+.box-gray:after, .box-gray:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+}
+
+.box-gray:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #FF59FE;
+  border-width: 11px;
+  margin-top: -10px;
+}
+
+.example-full-width {
+  width: 80%;
+  max-width: 985px;
+  margin: auto;
+ 
+}
+
+.msjs
+ {
+   max-width: 1000px;
+   max-height: 1500px;
+   margin: auto;
+ }
+
+
+.msg-container{
+  max-height:295px;
+  max-width:400px;
+
+  overflow-y:hidden;
+  overflow-x: hidden;
+
+
+
+  margin: auto;
+
+}
+
+.chat {
+  list-style: none;
+  background: none;
+  margin: 0;
+  padding: 0 0 0 0;
+  position: absolute;
+  top:60px;
+  height: 80vh; 
+  width: 100%;
+  overflow-y: scroll;
+  padding-right: 17px;
+}
+
+.btnEnviar
+{
+
+background-color: #2B34C4;
+border-radius: 100%;
+position: fixed;
+
+margin: auto;
+
+
+}
+
+.chat-write-box {
+  
+  bottom: 0;
+
+  max-width: 330px;
+  max-height: 33px;
+  margin: auto;
+ 
+  
+  
+}
+
+
+
+.example-card {
+  margin: auto;
+
+}
+
+
+
+
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color:#2B34C4 !important;;
+ }

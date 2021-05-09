@@ -1,63 +1,71 @@
+<body class="bgimg">
+
 <mat-toolbar class="navColor">
     <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
 
 
-    <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+    <button mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
 
-    <button  mat-raised-button (click)="goChat()" class="nav-link" style="margin: 1px;" >CHAT</button>
 
 
 </mat-toolbar>
 
 
 
-<div class="bgimg">
 
-<br>
-
-
-
-<mat-card class="example-card ">
-
-
-    <mat-card-content>
-
-        <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile> <h2>Jugador: </h2></mat-grid-tile>
-            <mat-grid-tile><h2>Bot: </h2></mat-grid-tile>
-
-          </mat-grid-list>
+    <br>
 
 
 
-        <table style="width:400px;height:400px;text-align: center" align="center" class="tablero">
-            <tr>
-                <td id="cell11" class="cell"></td>
-                <td id="cell12" class="cell"></td>
-                <td id="cell13" class="cell"></td>
-            </tr>
-            <tr>
-                <td id="cell21" class="cell"></td>
-                <td id="cell22" class="cell"></td>
-                <td id="cell23" class="cell"></td>
-            </tr>
-            <tr>
-                <td id="cell31" class="cell"></td>
-                <td id="cell32" class="cell"></td>
-                <td id="cell33" class="cell"></td>
-            </tr>
-        </table>
+    <mat-card class="example-card ">
 
-        <h2 class="game--status"></h2>
-        <button mat-raised-button class="button1" id="reset" style="background-color: #2B34C4; color: white;" type="button" value="RESET" class="  game--restart">Reiniciar
-        Juego</button>
 
-    </mat-card-content>
-    <mat-card-actions>
-    </mat-card-actions>
-</mat-card>
+        <mat-card-content>
 
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile>
+                    <h2>Jugador: </h2>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h2>Bot: </h2>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+
+
+
+            <table style="width:400px;height:400px;text-align: center" align="center" class="tablero">
+                <tr>
+                    <td id="cell11" class="cell"></td>
+                    <td id="cell12" class="cell"></td>
+                    <td id="cell13" class="cell"></td>
+                </tr>
+                <tr>
+                    <td id="cell21" class="cell"></td>
+                    <td id="cell22" class="cell"></td>
+                    <td id="cell23" class="cell"></td>
+                </tr>
+                <tr>
+                    <td id="cell31" class="cell"></td>
+                    <td id="cell32" class="cell"></td>
+                    <td id="cell33" class="cell"></td>
+                </tr>
+            </table>
+
+            <h2 class="game--status"></h2>
+            <button mat-raised-button class="button1" id="reset" style="background-color: #2B34C4; color: white;"
+                type="button" value="RESET" class="  game--restart">Reiniciar
+                Juego</button>
+
+        </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+    </mat-card>
+
+
+    
 <div>
-    <app-chat></app-chat>
-    </div>
+<app-chat-tateti></app-chat-tateti>
 </div>
+  
+</body>

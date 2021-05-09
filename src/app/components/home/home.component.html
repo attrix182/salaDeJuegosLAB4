@@ -4,105 +4,98 @@
 
 
 
-  <button  mat-raised-button (click)="goQuienSoy()" class="nav-link" style="margin: 5px;" >Quien Soy</button>
-<br>
+    <button mat-raised-button (click)="goQuienSoy()" class="nav-link" style="margin: 5px;">Quien Soy</button>
+    <br>
 </mat-toolbar>
 
-<b  style="margin: 25px;" >Bienvenido {{token}}<b>
+<b style="margin: 25px;">Bienvenido {{token}}<b>
 
 
 
-<div class="bgimg">
-    <div class="testclass">
-        <br>
-        <div align='center'>
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>TA TE TI</mat-card-title>
-                    <mat-card-subtitle>Tres en raya</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,g=0.5x0.5,f=auto/85535e05d1f130b16751c8308cfbb19b.png"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <p>
-                        El juego consiste en marcar 3 figuras en linea recta o diagonal.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-raised-button (click)="playTateti()" class="btnPlay" >Jugar</button>
-                </mat-card-actions>
-            </mat-card>
+        <div class="bgimg">
+            <div class="testclass">
+                <br>
+                <div align='center'>
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <mat-card-title>TA TE TI</mat-card-title>
+                            <mat-card-subtitle>Tres en raya</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image
+                            src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,g=0.5x0.5,f=auto/85535e05d1f130b16751c8308cfbb19b.png"
+                            alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                            <p>
+                                El juego consiste en marcar 3 figuras en linea recta o diagonal.
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button (click)="playTateti()" class="btnPlay">Jugar</button>
+                        </mat-card-actions>
+                    </mat-card>
 
-        </div>
+                </div>
 
-        <br>
-
-
-</div>
-<div class="bgimg">
-    <div class="testclass">
-        <div align='center'>
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>PIEDRA PAPEL O TIJERA</mat-card-title>
-                    <mat-card-subtitle>Tres en raya</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://i.pinimg.com/originals/11/91/47/119147f179a36c7937a1a9aeb1a069b7.png"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <p>
-                        El juego consiste en marcar 3 figuras en linea recta o diagonal.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button   mat-raised-button routerLink="/juegos/piedrapapeltijera"  class="btnPlay">Jugar</button>
-                </mat-card-actions>
-            </mat-card>
-
-        </div>
-
-    </div>
+                <br>
 
 
+            </div>
+            <div class="bgimg">
+                <div class="testclass">
+                    <div align='center'>
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                                <mat-card-title>PIEDRA PAPEL O TIJERA</mat-card-title>
+                                <mat-card-subtitle>Tres en raya</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image
+                                src="https://i.pinimg.com/originals/11/91/47/119147f179a36c7937a1a9aeb1a069b7.png"
+                                alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <p>
+                                    El juego consiste en marcar 3 figuras en linea recta o diagonal.
+                                </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-raised-button routerLink="/juegos/piedrapapeltijera"
+                                    class="btnPlay">Jugar</button>
+                            </mat-card-actions>
+                        </mat-card>
 
-<br>
+                    </div>
 
-
-<div class="bgimg">
-    <div class="testclass">
-        <div align='center'>
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>MEMOTEST</mat-card-title>
-                    <mat-card-subtitle>Recuerda la tarjeta</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://image.flaticon.com/icons/png/512/103/103228.png"
-                    alt="Photo of a Shiba Inu">
+                </div>
 
 
 
-                <mat-card-content>
-                    <p>
-                        El juego consiste en encontrar 2 cartas iguales.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button   mat-raised-button routerLink="/juegos/memotest"  class="btnPlay">Jugar</button>
-                </mat-card-actions>
-            </mat-card>
-    
-        </div>
-
-    </div>
+                <br>
 
 
-
-
-</div>
+                <div class="bgimg">
+                    <div class="testclass">
+                        <div align='center'>
+                            <mat-card class="example-card">
+                                <mat-card-header>
+                                    <mat-card-title>MEMOTEST</mat-card-title>
+                                    <mat-card-subtitle>Recuerda la tarjeta</mat-card-subtitle>
+                                </mat-card-header>
+                                <img mat-card-image src="https://image.flaticon.com/icons/png/512/103/103228.png"
+                                    alt="Photo of a Shiba Inu">
 
 
 
+                                <mat-card-content>
+                                    <p>
+                                        El juego consiste en encontrar 2 cartas iguales.
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                    <button mat-raised-button routerLink="/juegos/memotest"
+                                        class="btnPlay">Jugar</button>
+                                </mat-card-actions>
+                            </mat-card>
 
+                        </div>
+                    </div>
+                </div>
+            </div>

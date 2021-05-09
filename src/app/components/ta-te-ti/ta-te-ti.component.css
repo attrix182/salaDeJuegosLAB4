@@ -4,11 +4,14 @@
 
   }
   
-.bgimg{
-
-  background-color: rgb(182, 100, 237);
-}
+body
+{  background-color: rgb(182, 100, 237);}
   
+.bgimg {
+
+  height: 100%;
+  background: url('../../../assets/background.gif')  center center fixed;
+}
 
   .navColor {
 
@@ -48,9 +51,7 @@ margin: 0px auto;
 text-align: center;
 margin: auto;
 }
-body {
-  background-color: black;
-}
+
 
 .cell {
 width:85px;

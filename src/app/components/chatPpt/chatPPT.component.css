@@ -98,8 +98,10 @@
   max-height:295px;
   max-width:400px;
 
-  overflow-y:scroll;
+  overflow-y:hidden;
   overflow-x: hidden;
+
+
 
   margin: auto;
 
@@ -133,12 +135,16 @@ margin: auto;
 .chat-write-box {
   
   bottom: 0;
-  width:90%;
+
+  max-width: 330px;
+  max-height: 33px;
   margin: auto;
-  max-height: 35px;
+ 
   
   
 }
+
+
 
 .example-card {
   margin: auto;

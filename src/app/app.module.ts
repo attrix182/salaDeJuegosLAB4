@@ -1,3 +1,6 @@
+import { ChatPptComponent } from './components/chatPpt/chatPPT.component';
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,10 +11,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HomeComponent } from './components/home/home.component';
 import { QuiensoyComponent } from './components/quiensoy/quiensoy.component';
-import { ChatComponent } from './components/chat/chat.component';
+
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './components/memotest/memotest.component';
+import { ChatTatetiComponent } from './components/chatTateti/chatTateti.component';
+import { ChatPPTService } from './services/chatPPT.service';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -42,6 +48,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,10 +57,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     QuiensoyComponent,
     RegistroComponent,
-    ChatComponent,
+    ChatTatetiComponent,
     PiedraPapelTijeraComponent,
     TaTeTiComponent,
-    MemotestComponent
+    MemotestComponent,
+    ChatPptComponent
   ],
   imports: [
 

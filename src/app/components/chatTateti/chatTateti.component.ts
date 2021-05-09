@@ -1,17 +1,16 @@
+import { ChatTatetiService } from './../../services/chatTateti.service';
 import { Component, Input, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, ElementRef  } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mensaje } from '../../clases/mensaje';
-import { MensajeService } from './../../services/mensaje.service';
 import { Observable } from 'rxjs';
 
 
-
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  selector: 'app-chat-tateti',
+  templateUrl: './chatTateti.component.html',
+  styleUrls: ['./chatTateti.component.css']
 })
-export class ChatComponent implements AfterViewInit, OnInit{
+export class ChatTatetiComponent implements AfterViewInit, OnInit{
   @ViewChild('scrollframe', {static: false}) scrollFrame: ElementRef;
   @ViewChildren('item') itemElements: QueryList<any>;
   
@@ -21,7 +20,7 @@ export class ChatComponent implements AfterViewInit, OnInit{
 
   token: any;
 
-  
+
 
   d = new Date();
 
@@ -33,10 +32,12 @@ export class ChatComponent implements AfterViewInit, OnInit{
   //hora: string;
 
 
-  constructor(private router: Router, private MiServicio: MensajeService, firestore: MensajeService) {
+  constructor(private router: Router, private MiServicio: ChatTatetiService, firestore: ChatTatetiService) {
 
     this.mensaje = new Mensaje();
+    
     this.item$ = firestore.ObtenerTodos().valueChanges();
+
     this.mensaje.usuario = localStorage.getItem('token') || 'Anonimo';
     this.mensaje.hora = this.d.getHours() + ':' + this.d.getMinutes();
     
