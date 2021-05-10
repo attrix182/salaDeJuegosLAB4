@@ -1,5 +1,4 @@
 import { Scores } from 'src/app/clases/scores';
-import { ChatMiJuegoComponent } from './../chatMiJuego/chatMiJuego.component';
 import { Component, OnInit } from '@angular/core';
 import { BestScoreManager } from './app.storage.service';
 import { CONTROLS, COLORS, BOARD_SIZE, GAME_MODES } from './app.constants';

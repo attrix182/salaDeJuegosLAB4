@@ -32,7 +32,7 @@
     display: block;
     margin: auto;
     background-color: #45145c;
-    box-shadow: 0 9px 8px rgba(0, 0, 0, 0.30), 0 5px 5px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 9px 8px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     border-radius: 5px;
   }
   

@@ -1,7 +1,7 @@
-import { ChatMiJuegoService } from './../../services/chatMiJuego.service';
+import { ChatMiJuegoService } from '../../../services/chatMiJuego.service';
 import { Component, Input, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, ElementRef  } from '@angular/core';
 import { Router } from '@angular/router';
-import { Mensaje } from '../../clases/mensaje';
+import { Mensaje } from '../../../clases/mensaje';
 import { Observable } from 'rxjs';
 
 

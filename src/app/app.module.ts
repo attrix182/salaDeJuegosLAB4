@@ -1,4 +1,4 @@
-import { ChatMiJuegoComponent } from './components/chatMiJuego/chatMiJuego.component';
+import { ChatMiJuegoComponent } from './components/viborita/chatMiJuego/chatMiJuego.component';
 import { ChatMemotestComponent } from './components/chatMemotest/chatMemotest.component';
 
 import { HttpClientModule } from '@angular/common/http';

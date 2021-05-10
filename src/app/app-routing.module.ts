@@ -38,7 +38,7 @@ const routes: Routes = [
         { path: 'tateti', component: TaTeTiComponent },
         { path: 'piedrapapeltijera', component: PiedraPapelTijeraComponent },
         { path: 'memotest', component: MemotestComponent },
-        { path: 'rompecabezas', loadChildren: () => import('./components/viborita/viborita.module').then(m => m.ViboritaModule) },
+        { path: 'viborita', loadChildren: () => import('./components/viborita/viborita.module').then(m => m.ViboritaModule) },
    
       ]
 

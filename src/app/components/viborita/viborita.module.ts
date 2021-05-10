@@ -1,4 +1,5 @@
-import { ChatMiJuegoComponent } from './../chatMiJuego/chatMiJuego.component';
+import { FormsModule } from '@angular/forms';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -38,7 +39,9 @@ import { MatOptionModule } from '@angular/material/core';
     MatInputModule,
     MatSortModule,
     MatDialogModule,
-    MatOptionModule
+    MatOptionModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [
     BestScoreManager
