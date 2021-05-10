@@ -1,0 +1,35 @@
+.example-card {
+    margin: auto;
+    max-width: 500px;
+
+  }
+  
+body
+{  background-color: rgb(182, 100, 237);}
+  
+.bgimg {
+
+  height: 100%;
+  background: url('../../../assets/background.gif')  center center fixed;
+}
+
+  .navColor {
+
+    background-color: white;
+ 
+
+  }
+
+  
+
+  .nav-link{
+
+
+    background-color: black;
+    color: white;
+ 
+  }
+
+
+
+

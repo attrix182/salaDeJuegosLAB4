@@ -30,6 +30,13 @@ export class HomeComponent implements OnInit {
     
   }
 
+  goPuntajes()
+  {
+    location.assign("/puntajes");
+  }
+
+
+  
   goQuienSoy()
   {
     location.assign("/quiensoy");

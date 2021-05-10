@@ -1,3 +1,4 @@
+import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
 
   { path: 'quiensoy', component: QuiensoyComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'puntajes', component: PuntajesComponent },
   
   {
     path: 'juegos',

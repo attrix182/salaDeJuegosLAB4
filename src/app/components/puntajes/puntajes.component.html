@@ -1,0 +1,61 @@
+<body class="bgimg">
+
+    <mat-toolbar class="navColor">
+        <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+
+
+        <button mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+
+
+
+    </mat-toolbar>
+    <br>
+
+    <mat-card class="example-card ">
+
+
+        <mat-card-content>
+
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile>
+                            <h1>Puntajes</h1>
+                </mat-grid-tile>
+         
+            </mat-grid-list>
+
+
+            <table >
+                <thead>
+                  
+                  <th>Usuario</th>
+                  <th>Puntaje</th>
+                  <th>Fecha</th>
+        
+              
+                  <th>
+                   
+               
+             
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of scoresTateti$ | async">
+                    <td>{{item.name}}</td>
+                    <td>{{item.score}}</td>
+                    <td>{{item.fecha}}</td>
+         
+                    <td> <i     class="fa fa-check "></i></td>
+                  </tr>
+                </tbody>
+              </table>
+
+       
+
+ 
+        </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+    </mat-card>
+
+
+</body>

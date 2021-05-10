@@ -37,12 +37,14 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+
 import {AngularFireModule} from '@angular/fire';
 
 
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PuntajesComponent } from './components/puntajes/puntajes.component';
 
 
 
@@ -61,7 +63,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PiedraPapelTijeraComponent,
     TaTeTiComponent,
     MemotestComponent,
-    ChatPptComponent
+    ChatPptComponent,
+    PuntajesComponent,
+    
   ],
   imports: [
 

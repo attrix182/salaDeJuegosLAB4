@@ -20,6 +20,15 @@ body
 
   }
 
+  
+.info{
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+}
+
   .nav-link{
 
 
@@ -27,8 +36,6 @@ body
     color: white;
  
   }
-
-
 
 
 
@@ -54,8 +61,8 @@ margin: auto;
 
 
 .cell {
-width:85px;
-height:85px;
+width:70px;
+height:80px;
 border: 5px solid #000000;
 background: #FFFFFF;
 font-size: 46pt;
