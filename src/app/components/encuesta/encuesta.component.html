@@ -15,7 +15,7 @@
 
     <mat-card class="example-card ">
         <mat-card-header>
-          <mat-card-title>Rompecabezas</mat-card-title>
+          <mat-card-title>    <h1 class="title">⌨️Encuesta sobre la sala de Juegos </h1></mat-card-title>
           <mat-card-subtitle></mat-card-subtitle>
         </mat-card-header>
       
@@ -23,8 +23,8 @@
 
 
 <div class="container" [formGroup]="encuestaForm">
-    <h1 class="title">Encuesta sobre la sala de Juegos</h1>
-    <h3 class="subtitle">Datos personales</h3>
+
+    <h3 class="subtitle">🕹️Datos del Jugador🕹️</h3>
     <div class="datosPersonales">
         <mat-form-field appearance="fill">
             <mat-label>Nombre</mat-label>
@@ -47,37 +47,37 @@
     <div *ngIf="encuestaForm.get('nombre')?.errors && 
         (encuestaForm.get('nombre')?.dirty || encuestaForm.get('nombre')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('nombre')?.hasError('required')">
-            *El campo nombre es requerido.
+           <!-- *El campo nombre es requerido. -->
         </small>
     </div>
     <div *ngIf="encuestaForm.get('apellido')?.errors && 
         (encuestaForm.get('apellido')?.dirty || encuestaForm.get('apellido')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('apellido')?.hasError('required')">
-            *El campo apellido es requerido.
+            <!-- *El campo apellido es requerido. -->
         </small>
     </div>
     <div *ngIf="encuestaForm.get('edad')?.errors && 
         (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('edad')?.hasError('required')">
-            *El campo edad es requerido.
+            <!-- *El campo edad es requerido. -->
         </small>
     </div>
     <div *ngIf="encuestaForm.get('edad')?.errors && 
         (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('edad')?.hasError('min')">
-            *La edad debe ser mayor a 18 años.
+           *La edad debe ser mayor a 18 años. 
         </small>
     </div>
     <div *ngIf="encuestaForm.get('edad')?.errors && 
         (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('edad')?.hasError('max')">
-            *La edad debe ser menor a 99 años.
+          *La edad debe ser menor a 99 años. 
         </small>
     </div>
     <div *ngIf="encuestaForm.get('telefono')?.errors && 
         (encuestaForm.get('telefono')?.dirty || encuestaForm.get('telefono')?.touched)">
         <small class="text-danger" *ngIf="encuestaForm.get('telefono')?.hasError('required')">
-            *El campo telefono es requerido.
+            <!-- *El campo telefono es requerido. -->
         </small>
     </div>
     <div *ngIf="encuestaForm.get('telefono')?.errors && 
@@ -93,14 +93,13 @@
         </small>
     </div>
     <div>
-        <h3 class="subtitle">¿Como nos encontraste?</h3>
+        <h3 class="subtitle">¿Como llegaste aqui?</h3>
         <mat-form-field appearance="fill">
             <mat-label>Selecciona uno</mat-label>
             <select matNativeControl formControlName="comoNosEncontraste">
                 <option value="amigos">Por un amigo</option>
                 <option value="redes">Redes Sociales</option>
-                <option value="youtube">Anuncio en You Tube</option>
-                <option value="web">Anuncio en Paginas Web</option>
+                <option value="youtube">Anuncio en YouTube</option>
                 <option value="otra">Otra</option>
             </select>
         </mat-form-field>
@@ -112,18 +111,19 @@
         </div>
     </div>
     <div>
-        <h3 class="subtitle">¿Que tanto divertida te parecio esta sala de juegos?</h3>
+        <h3 class="subtitle">¿Que puntaje le darias a la sala de juegos?</h3>
+        1<mat-slider min="1" max="10" step="1" value="10" aria-label="unit(s)" formControlName="cuantoGusto"></mat-slider>10
         <div>
 
         </div>
     </div>
     <div>
-        <h3 class="subtitle">¿Cuales de nuestros juegos jugaste?</h3>
+        <h3 class="subtitle">¿Cual o cuales fueron tus juegos favoritos?</h3>
         <mat-selection-list formControlName="cualesJugaste">
-            <mat-list-option checkboxPosition="before" value="Ta-Te-Ti">Ta-Te-Ti</mat-list-option>
-            <mat-list-option checkboxPosition="before" value="ppt">Piedra, papel o tijera</mat-list-option>
-            <mat-list-option checkboxPosition="before" value="memory">Juego de la memoria</mat-list-option>
-            <mat-list-option checkboxPosition="before" value="colourPicker">Colour Picker</mat-list-option>
+            <mat-list-option checkboxPosition="before" value="TaTeTi">TaTeTi</mat-list-option>
+            <mat-list-option checkboxPosition="before" value="PPT">Piedra, papel o tijera</mat-list-option>
+            <mat-list-option checkboxPosition="before" value="Memotest">Memotest</mat-list-option>
+            <mat-list-option checkboxPosition="before" value="Rompecabezas">Rompecabezas</mat-list-option>
         </mat-selection-list>
         <div *ngIf="encuestaForm.get('cualesJugaste')?.errors && 
         (encuestaForm.get('cualesJugaste')?.dirty || encuestaForm.get('cualesJugaste')?.touched)">
@@ -133,7 +133,12 @@
         </div>
     </div>
     <div>
-        <h3 class="subtitle">¿Le recomendarias esta Sala de juegos a un amigo?</h3>
+        <h3 class="subtitle">¿Recomendarias la Sala de juegos a alguien?</h3>
+        <mat-radio-group aria-label="Select an option" formControlName="recomendarias">
+            <mat-radio-button value="1">Si</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+
 
         <div *ngIf="encuestaForm.get('recomendarias')?.errors && 
         (encuestaForm.get('recomendarias')?.dirty || encuestaForm.get('recomendarias')?.touched)">
@@ -142,7 +147,7 @@
             </small>
         </div>
     </div>
-
+    <br>
     <button class="enviarBtn" type="button" mat-raised-button color="primary" [disabled]="!encuestaForm.valid"
         (click)="enviarEncuesta()">Enviar</button>
 </div>

@@ -1,3 +1,4 @@
+import { ChatMiJuegoComponent } from './components/chatMiJuego/chatMiJuego.component';
 import { ChatMemotestComponent } from './components/chatMemotest/chatMemotest.component';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -38,6 +39,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 import {AngularFireModule} from '@angular/fire';
@@ -70,7 +72,8 @@ import { EncuestaComponent } from './components/encuesta/encuesta.component';
     PuntajesComponent,
     ChatMemotestComponent,
     PuzzleComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    ChatMiJuegoComponent
     
   ],
   imports: [
@@ -97,7 +100,8 @@ import { EncuestaComponent } from './components/encuesta/encuesta.component';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

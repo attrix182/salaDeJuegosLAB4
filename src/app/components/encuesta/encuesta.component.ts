@@ -1,3 +1,4 @@
+import { EncuestaService } from '../../services/encuesta.service';
 import { Usuario } from './../../clases/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -5,6 +6,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { Encuesta } from 'src/app/models/encuesta';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-encuesta',
@@ -12,6 +16,8 @@ import { Encuesta } from 'src/app/models/encuesta';
   styleUrls: ['./encuesta.component.css']
 })
 export class EncuestaComponent implements OnInit {
+
+
 
   collection = '/encuestas';
   encuesta: Encuesta = new Encuesta;
@@ -46,7 +52,7 @@ export class EncuestaComponent implements OnInit {
     ])
   });
 
-  constructor(private dialog: MatDialog, private router: Router) { }
+  constructor(private dialog: MatDialog, private router: Router, private encuestaSVC: EncuestaService) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user') || "{}");
@@ -57,7 +63,9 @@ export class EncuestaComponent implements OnInit {
 
   enviarEncuesta() {
 
-    this.encuesta.usuario = this.user?.correo;
+
+
+    this.encuesta.usuario = localStorage.getItem('token');
     this.encuesta.nombre = this.encuestaForm.get('nombre')?.value;
     this.encuesta.apellido = this.encuestaForm.get('apellido')?.value;
     this.encuesta.edad = this.encuestaForm.get('edad')?.value;
@@ -67,7 +75,34 @@ export class EncuestaComponent implements OnInit {
     this.encuesta.cualesJugaste = this.encuestaForm.get('cualesJugaste')?.value;
     this.encuesta.recomendarias = this.encuestaForm.get('recomendarias')?.value;
 
-  
+    this.encuestaSVC.Crear(this.encuesta);
 
+  this.alert('success','Encuesta enviada, seras redirigido a home')
+
+setTimeout(() => {
+  location.assign("/home")
+}, 1900);
+
+  }
+
+
+  alert(icon: SweetAlertIcon, text: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: text
+    })
   }
 }
