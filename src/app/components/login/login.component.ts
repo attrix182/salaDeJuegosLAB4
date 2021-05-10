@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/clases/usuario';
-import { UsuarioFireService } from 'src/app/services/usuarios.service';
-import { FormControl, Validators } from '@angular/forms';
+import { Usuario } from '../../clases/usuario';
+import { UsuarioFireService } from '../../services/usuarios.service';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+ 
   public unUsuario: Usuario;
   //public existe: Boolean;
   public loged: Boolean;
@@ -21,7 +23,11 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { this.unUsuario = new Usuario(); this.loged = false; }
+  constructor(public dialog: MatDialog, private servicioUsuario: UsuarioFireService, private router: Router) { 
+    
+    console.log("Estoy en logion ts")
+    
+    this.unUsuario = new Usuario(); this.loged = false; }
 
 
   correo = new FormControl('', [Validators.required, Validators.email]);
@@ -53,23 +59,44 @@ export class LoginComponent implements OnInit {
 
   }
 
+  alert(icon: SweetAlertIcon, text: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: text
+    })
+  }
 
 
   public Login() {
 
-
+    this.alert('info', 'verificando datos')
     this.servicioUsuario.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
       if (result.length == 1) {
 
         localStorage.setItem('token', this.unUsuario.correo)
-
-        this.cargando = true;
+        this.alert('success', 'Bienvenido!')
+  
+   
         this.router.navigateByUrl("home");
+
         console.log('existe')
       }
       else {
-        //this.cargando = true;
-         this.dialog.open(DialogElementsExampleDialog);
+        this.alert('error', 'Usuario Invalido!')
+
       }
 
     })
@@ -89,13 +116,6 @@ export class LoginComponent implements OnInit {
   }
 
 }
-
-
-@Component({
-  selector: 'dialog-elements-example-dialog',
-  templateUrl: 'dialog-elements-example-dialog.html',
-})
-export class DialogElementsExampleDialog { }
 
 
 

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-quiensoy',
-  templateUrl: './quiensoy.component.html',
-  styleUrls: ['./quiensoy.component.css']
+  selector: 'app-about-me',
+  templateUrl: './about-me.component.html',
+  styleUrls: ['./about-me.component.css']
 })
-export class QuiensoyComponent implements OnInit {
+export class AboutMeComponent implements OnInit {
 
   token:any;
 

@@ -4,12 +4,9 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import {LoginComponent} from './components/login/login.component';
+
 import { MemotestComponent } from './components/memotest/memotest.component';
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
-import { QuiensoyComponent } from './components/quiensoy/quiensoy.component';
-import {RegistroComponent} from './components/registro/registro.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 
 
@@ -21,12 +18,15 @@ const routes: Routes = [
 
   },
 
+  { path: 'login', loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule) },
 
-  { path: 'login', component: LoginComponent},
-  { path: 'registro', component: RegistroComponent },
+  { path: 'registro', loadChildren: () => import('./components/register/register.module').then(m => m.RegisterModule) },
 
-  { path: 'quiensoy', component: QuiensoyComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'quiensoy', loadChildren: () => import('./components/about-me/about-me.module').then(m => m.AboutMeModule) },
+
+  { path: 'home', loadChildren: () => import('./components/principal/principal.module').then(m => m.PrincipalModule) },
+
+
   { path: 'puntajes', component: PuntajesComponent },
   { path: 'encuesta', component: EncuestaComponent },
   
@@ -40,10 +40,14 @@ const routes: Routes = [
         { path: 'piedrapapeltijera', component: PiedraPapelTijeraComponent },
         { path: 'memotest', component: MemotestComponent },
         { path: 'rompecabezas', component: PuzzleComponent },
-        { path: '**', component: HomeComponent }
+   
       ]
 
   },
+
+ 
+
+  { path: '**', loadChildren: () => import('./components/not-found/not-found.module').then(m => m.NotFoundModule) },
 
 ];
 

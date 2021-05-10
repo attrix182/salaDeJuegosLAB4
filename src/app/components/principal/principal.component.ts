@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {} from '../../clases/usuario'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-principal',
+  templateUrl: './principal.component.html',
+  styleUrls: ['./principal.component.css']
 })
-export class HomeComponent implements OnInit {
+export class PrincipalComponent implements OnInit {
+
   token:any;
 
 

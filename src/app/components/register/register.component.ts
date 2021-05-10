@@ -4,14 +4,15 @@ import { Usuario } from '../../clases/usuario'
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   unUsuario: Usuario;
 
@@ -20,6 +21,28 @@ export class RegistroComponent implements OnInit {
     this.unUsuario = new Usuario(); 
   
 
+  }
+
+
+
+  alert(icon: SweetAlertIcon, text: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: text
+    })
   }
 
 
@@ -52,8 +75,9 @@ export class RegistroComponent implements OnInit {
 
   Registro() {
 
-    console.log(this.clave);
-    console.log(this.correo);
+    
+    this.alert('info', 'verificando datos')
+
 
     if (!(this.unUsuario.clave == '' && this.unUsuario.correo == '')) //revisar
     {
@@ -62,17 +86,22 @@ export class RegistroComponent implements OnInit {
       this.MiServicio.BuscarUsuario(this.unUsuario).valueChanges().subscribe(result => {
         if (result.length == 0) {
 
+
+
+
           this.MiServicio.Crear(this.unUsuario).then(() => {
 
+            this.alert('success', 'Registrado, redigiendo a home')
             localStorage.setItem('token', this.unUsuario.correo);
             console.log('se envio el Usuario');
 
             this.router.navigateByUrl("home");
+            return;
 
         })
         }
         else{ 
-          
+
           console.log('existe');
           //this.dialog.open(DialogElementsExampleDialog); 
         
@@ -93,8 +122,3 @@ export class RegistroComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'dialog-elements-example-dialog',
-  templateUrl: 'dialog-elements-example-dialog.html',
-})
-export class DialogElementsExampleDialog { }

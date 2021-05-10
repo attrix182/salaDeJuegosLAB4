@@ -11,11 +11,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
-import { HomeComponent } from './components/home/home.component';
-import { QuiensoyComponent } from './components/quiensoy/quiensoy.component';
-
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './components/memotest/memotest.component';
@@ -60,10 +55,6 @@ import { EncuestaComponent } from './components/encuesta/encuesta.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomeComponent,
-    QuiensoyComponent,
-    RegistroComponent,
     ChatTatetiComponent,
     PiedraPapelTijeraComponent,
     TaTeTiComponent,

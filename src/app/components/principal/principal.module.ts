@@ -1,7 +1,8 @@
-import { FormsModule } from '@angular/forms';
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { PrincipalRoutingModule } from './principal-routing.module';
+import { PrincipalComponent } from './principal.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -15,17 +16,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatOptionModule } from '@angular/material/core';
 
-import { LoginComponent } from './login.component';
-import { LoginRoutingModule } from './login-routing.module';
-
 
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [PrincipalComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule,
+    PrincipalRoutingModule,
     MatSliderModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
@@ -37,8 +35,7 @@ import { LoginRoutingModule } from './login-routing.module';
     MatInputModule,
     MatSortModule,
     MatDialogModule,
-    MatOptionModule,
-    FormsModule
+    MatOptionModule
   ]
 })
-export class LoginModule { }
+export class PrincipalModule { }
