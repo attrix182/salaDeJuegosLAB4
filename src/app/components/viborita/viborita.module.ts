@@ -27,7 +27,6 @@ import { MatOptionModule } from '@angular/material/core';
   imports: [
     CommonModule,
     ViboritaRoutingModule,
-
     MatSliderModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
