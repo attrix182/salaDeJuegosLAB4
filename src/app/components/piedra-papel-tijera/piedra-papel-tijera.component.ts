@@ -59,6 +59,11 @@ export class PiedraPapelTijeraComponent  {
 
   }
 
+
+  goHome(){
+    location.assign("/home")
+  }
+  
   scores = [0 , 0];
   weapons = [
     'rock',

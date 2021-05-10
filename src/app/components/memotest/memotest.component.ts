@@ -42,29 +42,33 @@ export class MemotestComponent implements OnInit {
     { iconSrc: 'bolt', seleccionada: false }
   ];
 
- scoreNuevo: Scores;
-  
-  constructor(private paisesService: PaisesService, private gamesrc : GameScoresService) {
+  scoreNuevo: Scores;
+
+  constructor(private paisesService: PaisesService, private gamesrc: GameScoresService) {
     this.scoreNuevo = new Scores();
-    
+
     this.scoreNuevo.name = localStorage.getItem('token');
 
     this.scoreNuevo.fecha = new Date().toLocaleDateString();
-    
-    this.scoreNuevo.juego ="Memotest";
+
+    this.scoreNuevo.juego = "Memotest";
   }
 
 
   guardarScore() {
-    if(this.puntaje != 0){
-    this.scoreNuevo.score = this.puntaje
-    this.gamesrc.AgregarScore(this.scoreNuevo);
+    if (this.puntaje != 0) {
+      this.scoreNuevo.score = this.puntaje
+      this.gamesrc.AgregarScore(this.scoreNuevo);
 
-    this.alert('info', 'Puntaje guardado');
+      this.alert('info', 'Puntaje guardado');
+    }
+    else {
+      this.alert('warning', 'Debes jugar primero');
+    }
   }
-  else{
-    this.alert('warning', 'Debes jugar primero');
-  }
+
+  goHome(){
+    location.assign("/home")
   }
 
 

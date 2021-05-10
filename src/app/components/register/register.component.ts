@@ -100,8 +100,8 @@ export class RegisterComponent implements OnInit {
 
         })
         }
-        else{ 
-
+        else{
+          
           console.log('existe');
           //this.dialog.open(DialogElementsExampleDialog); 
         

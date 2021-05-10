@@ -1,0 +1,74 @@
+<body class="bgimg">
+    <mat-toolbar class="navColor">
+      
+    
+      
+      <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+      <button  mat-raised-button (click)="goHome()"class="nav-link " style="margin: 10px;">HOME</button>
+    
+    
+    </mat-toolbar>
+    
+    
+    
+    <br>
+    
+    <div align=center>
+    <mat-card class="example-card " >
+      <mat-card-header>
+        <mat-card-title>Viborita</mat-card-title>
+
+      </mat-card-header>
+    
+      <mat-card-content>
+
+    
+        <div class="content">
+        
+          <mat-card>
+            <mat-card-content>
+    
+              <br><br>
+              <div class="game-container">
+                <div class="game-header">
+                  <h3 class="logo">ngx-Snake</h3>
+                  <div class="score-block">
+                    <h3 class="score" [ngClass]="{'new-best-score': newBestScore}">Score: {{score}}</h3>
+                    <h3 class="best-score" [ngClass]="{'new-best-score': newBestScore}">Best Score: {{best_score}}</h3>
+                  </div>
+                </div>
+                <div class="row" *ngFor="let column of board; let i = index;">
+                  <div class="column" [ngStyle]="{'background-color': setColors(i, j)}" *ngFor="let row of column; let j = index"></div>
+                </div>
+                <div class="start-button" [ngClass]="{'disable-clicks': gameStarted}" (click)="showMenu()">Start Game</div>
+                <div class="new-game-menu" *ngIf="showMenuChecker">
+                  <span class="new-game-menu-label">Select Mode</span>
+                  <div class="start-button new-game-button" (click)="newGame(mode)" *ngFor="let mode of getKeys(all_modes)">{{all_modes[mode]}}</div>
+                </div>
+              </div>
+    
+    
+            </mat-card-content>
+          </mat-card>
+    
+        </div>
+        
+
+          
+     
+          
+          <button type="button" mat-raised-button class="button1"  class="restart" style="margin: 5px;">Guardar puntaje</button>
+
+
+          <div>
+     
+          </div>
+    
+    
+
+      <mat-card-actions>
+      </mat-card-actions>
+
+     
+
+    

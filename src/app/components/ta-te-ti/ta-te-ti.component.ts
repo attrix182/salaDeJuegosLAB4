@@ -48,6 +48,10 @@ export class TaTeTiComponent implements OnInit {
       this.scoreNuevo.fecha = new Date().toLocaleDateString();
       this.scoreNuevo.juego ="TaTeTi";
     }
+
+    goHome(){
+      location.assign("/home")
+    }
   
 
     Deslogearse(){
