@@ -1,7 +1,10 @@
+import { Scores } from 'src/app/clases/scores';
 import { ChatMiJuegoComponent } from './../chatMiJuego/chatMiJuego.component';
 import { Component, OnInit } from '@angular/core';
 import { BestScoreManager } from './app.storage.service';
 import { CONTROLS, COLORS, BOARD_SIZE, GAME_MODES } from './app.constants';
+import { GameScoresService } from 'src/app/services/game-scores.service';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 
 @Component({
@@ -42,6 +45,8 @@ goHome(){
   public newBestScore = false;
   public best_score = this.bestScoreService.retrieve();
 
+  scoreNuevo:Scores
+
   private snake = {
     direction: CONTROLS.LEFT,
     parts: [
@@ -58,9 +63,48 @@ goHome(){
   };
 
   constructor(
-    private bestScoreService: BestScoreManager
+    private bestScoreService: BestScoreManager, private gamesrc : GameScoresService
   ) {
     this.setBoard();
+
+    this.scoreNuevo = new Scores();
+
+    this.scoreNuevo.name = localStorage.getItem('token')
+    this.scoreNuevo.fecha = new Date().toLocaleDateString();
+    this.scoreNuevo.juego ="Viborita";
+  }
+
+  alert(icon: SweetAlertIcon, text: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: icon,
+      title: text
+    })
+  }
+
+
+  guardarScore() {
+
+    if (this.score != 0) {
+      this.gamesrc.AgregarScore(this.scoreNuevo);
+
+      this.alert('info', 'Guardando puntaje');
+    }
+    else {
+      this.alert('warning', 'Debes jugar primero');
+    }
   }
 
   handleKeyboardEvents(e: KeyboardEvent) {
@@ -233,6 +277,7 @@ goHome(){
       this.bestScoreService.store(this.score);
       this.best_score = this.score;
       this.newBestScore = true;
+      this.scoreNuevo.score = this.score;
     }
 
     setTimeout(() => {
