@@ -1,0 +1,88 @@
+table {
+    border: 20px solid rgb(31, 21, 161);
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+td {
+    border: 3px solid black;
+    width: 5em;
+    height: 3em;
+    padding: 5px;
+}
+
+.icon {
+    font-size: 5em;
+}
+
+.iconCircle {
+    font-size: 6em;
+    color: rgb(0, 0, 0);
+}
+
+img {
+    height: 50px;
+}
+
+
+p {
+    font-family: Lato;
+  }
+  
+  .content{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
+  }
+  .flex-container{
+    display:flex;
+    width:100%;
+  }
+  
+  .flex-center{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bgimg {
+
+    height: 100%;
+    background: url('../../../assets/background.gif')  center center fixed;
+  }
+
+  .navColor {
+
+    background-color: white;
+
+  }
+
+  .nav-link{
+
+
+    background-color: black;
+    color: white;
+  }
+
+  
+
+  
+  .scoreDos{
+    background-color: #FF59FE;
+ 
+  }
+
+  .scoreUno{
+    background-color: #2B34C4;
+
+  }
+
+  
+
+
+  .spinner{
+    color: #2B34C4;
+  }
+
+  
+

@@ -11,6 +11,7 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 })
 
 export class PiedraPapelTijeraComponent  {
+  
   scoreNuevo: Scores;
 
     

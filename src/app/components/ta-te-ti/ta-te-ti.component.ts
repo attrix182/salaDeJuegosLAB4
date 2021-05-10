@@ -99,10 +99,17 @@ export class TaTeTiComponent implements OnInit {
     }
   
     guardarScore(){
-      this.gamesrc.AgregarScore(this.scoreNuevo);
 
-         this.alert('info','Puntaje guardado');
+    if(this.puntosUser != 0){
+      this.gamesrc.AgregarScore(this.scoreNuevo);
+  
+      this.alert('info', 'Puntaje guardado');
     }
+    else{
+      this.alert('warning', 'Debes jugar primero');
+    }
+    }
+  
   
     game(t: HTMLElement[]) {
       console.log(t);

@@ -1,3 +1,6 @@
+import { ChatMemotestComponent } from './components/chatMemotest/chatMemotest.component';
+
+import { HttpClientModule } from '@angular/common/http';
 import { ChatPptComponent } from './components/chatPpt/chatPPT.component';
 
 
@@ -16,7 +19,6 @@ import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/pie
 import { TaTeTiComponent } from './components/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './components/memotest/memotest.component';
 import { ChatTatetiComponent } from './components/chatTateti/chatTateti.component';
-import { ChatPPTService } from './services/chatPPT.service';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +41,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import {AngularFireModule} from '@angular/fire';
-
 
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
@@ -65,6 +66,7 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
     MemotestComponent,
     ChatPptComponent,
     PuntajesComponent,
+    ChatMemotestComponent
     
   ],
   imports: [
@@ -90,7 +92,8 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
     MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

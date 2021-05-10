@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore/';
 import { Mensaje } from '../clases/mensaje';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 

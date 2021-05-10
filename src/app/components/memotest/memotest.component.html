@@ -1,1 +1,81 @@
-<p>memotest works!</p>
+
+<body class="bgimg">
+    <mat-toolbar class="navColor">
+      
+
+      <button mat-raised-button (click)="Deslogearse()" class="nav-link">DESLOGUEARSE</button>
+      <button  mat-raised-button routerLink="../home" class="nav-link " style="margin: 10px;">HOME</button>
+    
+    
+    </mat-toolbar>
+    
+    <br>
+    
+
+      <mat-card-content>
+    
+        <mat-grid-list cols="2" rowHeight="2:1" class="list">
+    
+    
+        </mat-grid-list>
+    
+        <div class="content">
+          <mat-card>
+            <mat-card-content>
+                <div class="container p-3">
+
+                    <table>
+                        <tr *ngFor="let fila of grilla">
+                            <td *ngFor="let columna of fila" (click)="elegirCelda(columna)">
+                
+                                <i *ngIf="columna.iconSrc == 'heart' && columna.seleccionada">
+                                    <img src='{{ paises[3].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'car' && columna.seleccionada">
+                                    <img src='{{ paises[6].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'apple' && columna.seleccionada">
+                                    <img src='{{ paises[5].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'bell' && columna.seleccionada">
+                                    <img src='{{ paises[0].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'bicycle' && columna.seleccionada">
+                                    <img src='{{ paises[1].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'bomb' && columna.seleccionada">
+                                    <img src='{{ paises[2].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'bolt' && columna.seleccionada">
+                                    <img src='{{ paises[4].flag }}' alt="" srcset="">
+                                </i>
+                                <i *ngIf="columna.iconSrc == 'book' && columna.seleccionada">
+                                    <img src='{{ paises[7].flag }}' alt="" srcset="">
+                                </i>
+                                <i class="fa fa-circle icon" *ngIf="!columna.seleccionada"></i>
+                
+                            </td>
+                        </tr>
+                    </table>
+        
+          <div align=center>
+          <button type="button" mat-raised-button (click)="guardarScore()" class="button1"  class="restart" color="primary" style="margin: 5px;">Guardar puntaje</button>
+        </div>
+        </div>
+    
+    
+    
+    
+      </mat-card-content>
+      <mat-card-actions>
+      </mat-card-actions>
+
+
+            
+    </mat-card>
+    
+
+ 
+    <div>
+        <app-chat-memotest></app-chat-memotest>
+    </div>
