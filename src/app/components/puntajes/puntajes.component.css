@@ -1,6 +1,6 @@
 .example-card {
     margin: auto;
-    max-width: 800px;
+    max-width: 750px;
 
   }
   
@@ -87,8 +87,8 @@ body
    .mat-column-juego {
      word-wrap: break-word !important;
      white-space: unset !important;
-     flex: 0 0 40% !important;
-     width: 40% !important;
+     flex: 0 0 45% !important;
+     width: 45% !important;
      overflow-wrap: break-word;
      word-wrap: break-word;
    
@@ -102,7 +102,7 @@ body
 
    .mat-cell {
     color: rgb(0, 12, 182);
-    font-size: 15px;
+    font-size: 13px;
 }
 
 

@@ -51,7 +51,10 @@ ngOnInit() {
 }
 
 
-
+goEncuesta()
+{
+  location.assign("/encuesta");
+}
 
   Deslogearse() {
     localStorage.removeItem('token')

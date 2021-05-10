@@ -1,3 +1,5 @@
+import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { PuzzleComponent } from './components/puzzle/puzzle.component';
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'quiensoy', component: QuiensoyComponent },
   { path: 'home', component: HomeComponent },
   { path: 'puntajes', component: PuntajesComponent },
+  { path: 'encuesta', component: EncuestaComponent },
   
   {
     path: 'juegos',
@@ -36,6 +39,7 @@ const routes: Routes = [
         { path: 'tateti', component: TaTeTiComponent },
         { path: 'piedrapapeltijera', component: PiedraPapelTijeraComponent },
         { path: 'memotest', component: MemotestComponent },
+        { path: 'rompecabezas', component: PuzzleComponent },
         { path: '**', component: HomeComponent }
       ]
 

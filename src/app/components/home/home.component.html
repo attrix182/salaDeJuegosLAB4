@@ -4,6 +4,9 @@
     <button mat-raised-button (click)="goQuienSoy()" class="nav-link" style="margin: 5px;">Quien Soy</button>
 
     <button mat-raised-button (click)="goPuntajes()" class="nav-link" style="margin: 5px;">Puntajes</button>
+
+    
+    <button mat-raised-button (click)="goEncuesta()" class="nav-link" style="margin: 5px;">Encuesta</button>
     <br>
 </mat-toolbar>
 
@@ -52,7 +55,7 @@
                                 alt="Photo of a Shiba Inu">
                             <mat-card-content>
                                 <p>
-                                    El juego consiste en marcar 3 figuras en linea recta o diagonal.
+                                    El juego consiste en elegir una opcion y ganarle a tu oponente.
                                 </p>
                             </mat-card-content>
                             <mat-card-actions>
@@ -96,5 +99,31 @@
 
                         </div>
                     </div>
-                </div>
+        <br>
+
+                <div class="bgimg">
+                    <div class="testclass">
+                        <div align='center'>
+                            <mat-card class="example-card">
+                                <mat-card-header>
+                                    <mat-card-title>JUEGO PROPIO</mat-card-title>
+                                    <mat-card-subtitle>Rompecabezas</mat-card-subtitle>
+                                </mat-card-header>
+                                <img mat-card-image
+                                    src="https://i.pinimg.com/originals/a7/5a/d7/a75ad724a89610297b149dbad894b065.png"
+                                    alt="Photo of a Shiba Inu">
+                                <mat-card-content>
+                                    <p>
+                                        El juego consiste en marcar 3 figuras en linea recta o diagonal.
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                    <button mat-raised-button routerLink="/juegos/rompecabezas"
+                                        class="btnPlay">Jugar</button>
+                                </mat-card-actions>
+                            </mat-card>
+    
+                        </div>
+    
+                    </div>
             </div>

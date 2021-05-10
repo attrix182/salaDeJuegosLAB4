@@ -46,6 +46,8 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
+import { PuzzleComponent } from './components/puzzle/puzzle.component';
+import { EncuestaComponent } from './components/encuesta/encuesta.component';
 
 
 
@@ -66,7 +68,9 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
     MemotestComponent,
     ChatPptComponent,
     PuntajesComponent,
-    ChatMemotestComponent
+    ChatMemotestComponent,
+    PuzzleComponent,
+    EncuestaComponent
     
   ],
   imports: [
