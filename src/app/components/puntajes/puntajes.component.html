@@ -16,38 +16,37 @@
 
         <mat-card-content>
 
-            <mat-grid-list cols="2" rowHeight="2:1">
-                <mat-grid-tile>
-                            <h1>Puntajes</h1>
-                </mat-grid-tile>
-         
-            </mat-grid-list>
-
-
-            <table >
-                <thead>
-                  
-                  <th>Usuario</th>
-                  <th>Puntaje</th>
-                  <th>Fecha</th>
+            <mat-grid-list cols="1" rowHeight="1:1">
         
-              
-                  <th>
-                   
-               
-             
-                  </th>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of scoresTateti$ | async">
-                    <td>{{item.name}}</td>
-                    <td>{{item.score}}</td>
-                    <td>{{item.fecha}}</td>
-         
-                    <td> <i     class="fa fa-check "></i></td>
-                  </tr>
-                </tbody>
-              </table>
+            </mat-grid-list>
+              <div>
+
+                
+            <div *ngIf="isLoading" align=center>
+              <mat-spinner color="accent"></mat-spinner>
+            </div>
+                <mat-table [dataSource]="dataSource" multiTemplateDataRows *ngIf="!isLoading">
+                    <ng-container matColumnDef="nombre">
+                        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+                        <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+                      </ng-container>
+                      <ng-container matColumnDef="puntaje">
+                        <mat-header-cell *matHeaderCellDef> Puntaje </mat-header-cell>
+                        <mat-cell *matCellDef="let user"> {{user.score}} </mat-cell>
+                      </ng-container>
+                      <ng-container matColumnDef="fecha">
+                        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+                        <mat-cell *matCellDef="let user"> {{user.fecha}} </mat-cell>
+                        <mat-cell *matCellDef="let user"> </mat-cell>
+                      </ng-container>
+                      <ng-container matColumnDef="juego">
+                        <mat-header-cell *matHeaderCellDef> Juego </mat-header-cell>
+                        <mat-cell *matCellDef="let user"> {{user.juego}} </mat-cell>
+                      </ng-container>
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+              </div>
 
        
 

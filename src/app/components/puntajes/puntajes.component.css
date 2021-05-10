@@ -1,6 +1,6 @@
 .example-card {
     margin: auto;
-    max-width: 500px;
+    max-width: 800px;
 
   }
   
@@ -30,6 +30,85 @@ body
  
   }
 
+  table{
+    width: 100%;
+   }
+
+   
+   
+   .mat-column-nombre {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 40%;
+     width: 40% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-puntaje {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 20% !important;
+     width: 20% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-fecha {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 20% !important;
+     width: 20% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-juego {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 40% !important;
+     width: 40% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+
+   .mat-cell {
+    color: rgb(0, 12, 182);
+    font-size: 15px;
+}
 
 
+.mat-header-cell{
+
+  color: rgb(176, 0, 182);
+  font-size: 18px;
+}
 

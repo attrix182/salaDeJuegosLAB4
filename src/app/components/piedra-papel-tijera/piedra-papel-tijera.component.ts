@@ -1,15 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Scores } from 'src/app/clases/scores';
+import { GameScoresService } from 'src/app/services/game-scores.service';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
   templateUrl: './piedra-papel-tijera.component.html',
   styleUrls: ['./piedra-papel-tijera.component.css']
 })
-export class PiedraPapelTijeraComponent  {
 
-  constructor(private router: Router){}
+export class PiedraPapelTijeraComponent  {
+  scoreNuevo: Scores;
+
+    
+  constructor(private gamesrc : GameScoresService, private router:Router) {
+    this.scoreNuevo = new Scores();
+
+    this.scoreNuevo.name = localStorage.getItem('token')
+    this.scoreNuevo.fecha = new Date().toLocaleDateString();
+    this.scoreNuevo.juego ="Piedra papel o tijera";
+
+  }
+
+  alert(icon: SweetAlertIcon, text: string) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: text
+    })
+  }
+
+
+  guardarScore(){
+    this.scoreNuevo.score = this.scores[0]
+    this.gamesrc.AgregarScore(this.scoreNuevo);
+
+       this.alert('info','Puntaje guardado');
+  }
 
   Deslogearse(){
 

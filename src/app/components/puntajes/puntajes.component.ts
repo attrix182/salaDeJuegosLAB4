@@ -1,38 +1,74 @@
 import { Scores } from 'src/app/clases/scores';
-import { GameTatetiService } from 'src/app/services/game-tateti.service';
+import { GameScoresService } from 'src/app/services/game-scores.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { DataSource } from '@angular/cdk/collections';
+
+
 
 @Component({
   selector: 'app-puntajes',
   templateUrl: './puntajes.component.html',
-  styleUrls: ['./puntajes.component.css']
+  styleUrls: ['./puntajes.component.css'],
+ 
 })
+
 export class PuntajesComponent implements OnInit {
 
-  scoresTateti$:Observable<Scores[]>;
+  scoresTateti$: Observable<Scores[]>;
 
+  dataSource = new UserDataSource(this.tatetiSVC);
 
+  displayedColumns = ['nombre', 'puntaje', 'fecha', 'juego'];
 
-  constructor(private tatetiSVC: GameTatetiService) { 
+  retorno:boolean;
+
+ 
+
+  constructor(private tatetiSVC: GameScoresService) {
 
     this.scoresTateti$ = tatetiSVC.GetAll().valueChanges()
     console.log(this.scoresTateti$)
 
+
+ 
+
   }
 
-  ngOnInit(): void {
-  }
+  isLoading = true;
+  data = null
 
-
+ngOnInit() {
   
-  Deslogearse()
-  {
+    this.tatetiSVC.getO().
+       subscribe(
+        data => {
+          this.isLoading = false;
+          this.data = data
+        }, 
+        error => this.isLoading = false
+    );
+}
+
+
+
+
+  Deslogearse() {
     localStorage.removeItem('token')
     location.assign("/quiensoy");
   }
 
- 
 
 }
 
+export class UserDataSource extends DataSource<any>
+{
+  constructor(private gameSv: GameScoresService) {
+    super();
+  }
+  connect(): Observable<Scores[]> {
+    return this.gameSv.getO();
+ 
+  }
+  disconnect() { }
+}

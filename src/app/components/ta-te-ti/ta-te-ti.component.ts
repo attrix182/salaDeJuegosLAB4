@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Scores } from 'src/app/clases/scores';
-import { GameTatetiService } from 'src/app/services/game-tateti.service';
+import { GameScoresService } from 'src/app/services/game-scores.service';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
@@ -41,11 +41,12 @@ export class TaTeTiComponent implements OnInit {
    
   
     constructor(
-      private gamesrc : GameTatetiService, private router:Router) {
+      private gamesrc : GameScoresService, private router:Router) {
       this.scoreNuevo = new Scores();
 
       this.scoreNuevo.name = localStorage.getItem('token')
-      this.scoreNuevo.fecha = new Date();
+      this.scoreNuevo.fecha = new Date().toLocaleDateString();
+      this.scoreNuevo.juego ="TaTeTi";
     }
   
 
