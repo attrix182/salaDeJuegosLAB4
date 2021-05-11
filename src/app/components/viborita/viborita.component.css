@@ -148,7 +148,7 @@
     height:100%;
     background: url('../../../assets/background.gif')  center center fixed;
 
-    background-repeat: repeat-y;
+    background-repeat: repeat;
 
   }
 
