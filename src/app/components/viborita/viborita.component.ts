@@ -20,12 +20,11 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 export class ViboritaComponent {
 
 
-goHome(){
-  location.assign("/home")
-}
+  goHome() {
+    location.assign("/home")
+  }
 
-  Deslogearse()
-  {
+  Deslogearse() {
     localStorage.removeItem('token')
   }
 
@@ -44,7 +43,7 @@ goHome(){
   public newBestScore = false;
   public best_score = this.bestScoreService.retrieve();
 
-  scoreNuevo:Scores
+  scoreNuevo: Scores
 
   private snake = {
     direction: CONTROLS.LEFT,
@@ -62,7 +61,7 @@ goHome(){
   };
 
   constructor(
-    private bestScoreService: BestScoreManager, private gamesrc : GameScoresService
+    private bestScoreService: BestScoreManager, private gamesrc: GameScoresService
   ) {
     this.setBoard();
 
@@ -70,7 +69,7 @@ goHome(){
 
     this.scoreNuevo.name = localStorage.getItem('token')
     this.scoreNuevo.fecha = new Date().toLocaleDateString();
-    this.scoreNuevo.juego ="Viborita";
+    this.scoreNuevo.juego = "Viborita";
   }
 
   alert(icon: SweetAlertIcon, text: string) {
@@ -96,7 +95,10 @@ goHome(){
 
   guardarScore() {
 
+    
+    this.scoreNuevo.score = this.score
     if (this.score != 0) {
+
       this.gamesrc.AgregarScore(this.scoreNuevo);
 
       this.alert('info', 'Guardando puntaje');
@@ -276,13 +278,15 @@ goHome(){
       this.bestScoreService.store(this.score);
       this.best_score = this.score;
       this.newBestScore = true;
+
       this.scoreNuevo.score = this.score;
     }
 
     setTimeout(() => {
       me.isGameOver = false;
     }, 500);
-
+    this.scoreNuevo.score = this.score;
+    console.log(this.scoreNuevo.score)
     this.setBoard();
   }
 
