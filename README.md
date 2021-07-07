@@ -2,11 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
-## Ejecutarla en local
+## Ejecutar en local
 
 `npm install` para descargar/instalar las dependecias
 
 `ng serve` para servir un servidor local. Navega a `http://localhost:4200/`.
+
+##Deploy en Firebase y Heroku
+
+https://tpsaladejuegosutn.web.app/ *Recomendado
+
+https://saladejuegostp.herokuapp.com/
 
 ## Capturas
 
